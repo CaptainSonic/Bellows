@@ -13,6 +13,7 @@ function constructor (id) {
 	this.load = function (data) {// @lock
 		
 	$$("cchg").hide();
+	$$('component1_xAction').setValue("-");
 
 	// @region namespaceDeclaration// @startlock
 	var clogin = {};	// @textField
@@ -30,23 +31,24 @@ function constructor (id) {
 
 	clogin.blur = function clogin_blur (event)// @startlock
 	{// @endlock
-		var logEntry, NbSamlogin;
+		var logEntry, NbSamlogin, vAction;
 		
 		logEntry = event.currentTarget.value;
-		ds.Utilisateurs.query("Login=:1", { 
-			onSuccess:function(event) {
-				var myCollection = event.entityCollection;
-				NbSamlogin = myCollection.length;
-				if (NbSamlogin > 0) {
-					alert("Ce login (" + logEntry +") est déjà utilisé. Merci de saisir un login différent");	
-					$$('component1_clogin').setValue(null);
-					//$$('component1_clogin').focus(true);
-					$$('component1_bSave').disable();
-					}
-				}, params:[logEntry] 
-			});
-			
-		
+		vAction = $$('component1_xAction').getValue();
+		if (vAction === "Créer") {
+			ds.Utilisateurs.query("Login=:1", { 
+				onSuccess:function(event) {
+					var myCollection = event.entityCollection;
+					NbSamlogin = myCollection.length;
+					if (NbSamlogin > 0) {
+						alert("Ce login (" + logEntry +") est déjà utilisé. Merci de saisir un login différent");	
+						$$('component1_clogin').setValue(null);
+						//$$('component1_clogin').focus(true);
+						$$('component1_bSave').disable();
+						}
+					}, params:[logEntry] 
+				});
+		}
 	};// @lock
 
 	clogin.change = function clogin_change (event)// @startlock
@@ -135,6 +137,7 @@ function constructor (id) {
 		$$('component1_clogin').getLabel().setTextColor("black");
 		$$('component1_cDateEntree').getLabel().setTextColor("black");
 		$$('component1_cPswd').getLabel().setTextColor("black");
+		$$('component1_xAction').setValue("-");
 				
 		$$('component1').loadComponent("/Gest_Utilisateurs.waComponent");
 		
@@ -165,6 +168,7 @@ function constructor (id) {
 		$$('component1_cPswd').getLabel().setTextColor("red");
 		$$('component1_clogin').getLabel().setTextColor("red");
 		$$('component1_cAction').setValue("Créer");
+		$$('component1_xAction').setValue("Créer");
 		
 				
 	};// @lock
@@ -197,6 +201,7 @@ function constructor (id) {
 		$$('component1_cDateEntree').getLabel().setTextColor("black");
 		$$('component1_cPswd').getLabel().setTextColor("black");
 		$$('component1_clogin').getLabel().setTextColor("black");
+		$$('component1_xAction').setValue("-");
 		
 		sources.component1_utilisateurs.save();
 				
@@ -224,6 +229,7 @@ function constructor (id) {
 		$$('component1_ceMail').setReadOnly(false);
 		$$('component1_cDateEntree').getLabel().setTextColor("red");
 		$$('component1_cAction').setValue("Modifier");
+		$$('component1_xAction').setValue("Modifier");
 		
 		CLogin = $$('component1_clogin').getValue();
 		CPswd = $$('component1_cPswd').getValue();
