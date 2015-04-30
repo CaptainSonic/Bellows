@@ -16,7 +16,7 @@ function constructor (id) {
 	$$('component1_xAction').setValue("-");
 
 	// @region namespaceDeclaration// @startlock
-	var clogin = {};	// @textField
+	var cLogin = {};	// @textField
 	var cPswd = {};	// @textField
 	var cDateEntree = {};	// @textField
 	var cDateSortie = {};	// @textField
@@ -29,32 +29,10 @@ function constructor (id) {
 
 	// eventHandlers// @lock
 
-	clogin.blur = function clogin_blur (event)// @startlock
-	{// @endlock
-		var logEntry, NbSamlogin, vAction;
-		
-		logEntry = event.currentTarget.value;
-		vAction = $$('component1_xAction').getValue();
-		if (vAction === "Créer") {
-			ds.Utilisateurs.query("Login=:1", { 
-				onSuccess:function(event) {
-					var myCollection = event.entityCollection;
-					NbSamlogin = myCollection.length;
-					if (NbSamlogin > 0) {
-						alert("Ce login (" + logEntry +") est déjà utilisé. Merci de saisir un login différent");	
-						$$('component1_clogin').setValue(null);
-						//$$('component1_clogin').focus(true);
-						$$('component1_bSave').disable();
-						}
-					}, params:[logEntry] 
-				});
-		}
-	};// @lock
-
-	clogin.change = function clogin_change (event)// @startlock
+	cLogin.change = function cLogin_change (event)// @startlock
 	{// @endlock
 		var CLogin, CPswd, CDateEntree, CFonction;
-		CLogin = $$('component1_clogin').getValue();
+		CLogin = $$('component1_cLogin').getValue();
 		CPswd = $$('component1_cPswd').getValue();
 		CDateEntree = $$('component1_cDateEntree').getValue();
 		CFonction = $$('component1_cFonction').getValue();
@@ -64,12 +42,37 @@ function constructor (id) {
 		} else {
 			$$('component1_bSave').disable();
 		}
+
+	};// @lock
+
+	cLogin.blur = function cLogin_blur (event)// @startlock
+	{// @endlock
+		var logEntry, NbSamlogin, vAction;
+		
+		
+		vAction = $$('component1_xAction').getValue();
+		if (vAction === "Créer") {
+			logEntry = event.currentTarget.value;
+			ds.Utilisateurs.query("Login=:1", { 
+				onSuccess:function(event) {
+					var myCollection = event.entityCollection;
+					NbSamlogin = myCollection.length;
+					if (NbSamlogin > 0) {
+						alert("Ce login (" + logEntry +") est déjà utilisé. Merci de saisir un login différent");	
+						$$('component1_cLogin').setValue(null);
+						//$$('component1_clogin').focus(true);
+						$$('component1_bSave').disable();
+						}
+					}, params:[logEntry] 
+				});
+		}
+
 	};// @lock
 
 	cPswd.change = function cPswd_change (event)// @startlock
 	{// @endlock
 		var CLogin, CPswd, CDateEntree, CFonction;
-		CLogin = $$('component1_clogin').getValue();
+		CLogin = $$('component1_cLogin').getValue();
 		CPswd = $$('component1_cPswd').getValue();
 		CDateEntree = $$('component1_cDateEntree').getValue();
 		CFonction = $$('component1_cFonction').getValue();
@@ -85,7 +88,7 @@ function constructor (id) {
 	cDateEntree.change = function cDateEntree_change (event)// @startlock
 	{// @endlock
 		var CLogin, CPswd, CDateEntree, CFonction;
-		CLogin = $$('component1_clogin').getValue();
+		CLogin = $$('component1_cLogin').getValue();
 		CPswd = $$('component1_cPswd').getValue();
 		CDateEntree = $$('component1_cDateEntree').getValue();
 		CFonction = $$('component1_cFonction').getValue();
@@ -123,7 +126,7 @@ function constructor (id) {
 		$$('component1_filtreuser').enable();
 		$$('component1_bSave').hide();
 		$$('component1_bUndo').hide();
-		$$('component1_clogin').setReadOnly(true);
+		$$('component1_cLogin').setReadOnly(true);
 		$$('component1_cPswd').setReadOnly(true);
 		$$('component1_cNom').setReadOnly(true);
 		$$('component1_cPrenom').setReadOnly(true);
@@ -134,7 +137,7 @@ function constructor (id) {
 		$$('component1_sFonction').show();
 		$$('component1_cFonction').hide();
 		$$('component1_ceMail').setReadOnly(true);
-		$$('component1_clogin').getLabel().setTextColor("black");
+		$$('component1_cLogin').getLabel().setTextColor("black");
 		$$('component1_cDateEntree').getLabel().setTextColor("black");
 		$$('component1_cPswd').getLabel().setTextColor("black");
 		$$('component1_xAction').setValue("-");
@@ -154,7 +157,7 @@ function constructor (id) {
 		$$('component1_filtreuser').disable();
 		$$('component1_bSave').show();
 		$$('component1_bSave').disable();
-		$$('component1_clogin').setReadOnly(false);
+		$$('component1_cLogin').setReadOnly(false);
 		$$('component1_bUndo').show();
 		$$('component1_cPswd').setReadOnly(false);
 		$$('component1_cNom').setReadOnly(false);
@@ -166,7 +169,7 @@ function constructor (id) {
 		$$('component1_ceMail').setReadOnly(false);
 		$$('component1_cDateEntree').getLabel().setTextColor("red");
 		$$('component1_cPswd').getLabel().setTextColor("red");
-		$$('component1_clogin').getLabel().setTextColor("red");
+		$$('component1_cLogin').getLabel().setTextColor("red");
 		$$('component1_cAction').setValue("Créer");
 		$$('component1_xAction').setValue("Créer");
 		
@@ -188,7 +191,7 @@ function constructor (id) {
 		$$('component1_filtreuser').enable();
 		$$('component1_bSave').hide();
 		$$('component1_bUndo').hide();
-		$$('component1_clogin').setReadOnly(true);
+		$$('component1_cLogin').setReadOnly(true);
 		$$('component1_cPswd').setReadOnly(true);
 		$$('component1_cNom').setReadOnly(true);
 		$$('component1_cPrenom').setReadOnly(true);
@@ -200,7 +203,7 @@ function constructor (id) {
 		$$('component1_ceMail').setReadOnly(true);
 		$$('component1_cDateEntree').getLabel().setTextColor("black");
 		$$('component1_cPswd').getLabel().setTextColor("black");
-		$$('component1_clogin').getLabel().setTextColor("black");
+		$$('component1_cLogin').getLabel().setTextColor("black");
 		$$('component1_xAction').setValue("-");
 		
 		sources.component1_utilisateurs.save();
@@ -216,7 +219,7 @@ function constructor (id) {
 		$$('component1_filtreuser').disable();
 		$$('component1_bSave').show();
 		$$('component1_bUndo').show();
-		$$('component1_clogin').setReadOnly(true);
+		$$('component1_cLogin').setReadOnly(true);
 		$$('component1_cPswd').setReadOnly(true);
 		$$('component1_cNom').setReadOnly(false);
 		$$('component1_cPrenom').setReadOnly(false);
@@ -231,7 +234,7 @@ function constructor (id) {
 		$$('component1_cAction').setValue("Modifier");
 		$$('component1_xAction').setValue("Modifier");
 		
-		CLogin = $$('component1_clogin').getValue();
+		CLogin = $$('component1_cLogin').getValue();
 		CPswd = $$('component1_cPswd').getValue();
 		CDateEntree = $$('component1_cDateEntree').getValue();
 		CFonction = $$('component1_cFonction').getValue();
@@ -250,8 +253,8 @@ function constructor (id) {
 	};// @lock
 
 	// @region eventManager// @startlock
-	WAF.addListener(this.id + "_clogin", "blur", clogin.blur, "WAF");
-	WAF.addListener(this.id + "_clogin", "change", clogin.change, "WAF");
+	WAF.addListener(this.id + "_cLogin", "change", cLogin.change, "WAF");
+	WAF.addListener(this.id + "_cLogin", "blur", cLogin.blur, "WAF");
 	WAF.addListener(this.id + "_cPswd", "change", cPswd.change, "WAF");
 	WAF.addListener(this.id + "_cDateEntree", "change", cDateEntree.change, "WAF");
 	WAF.addListener(this.id + "_cDateSortie", "change", cDateSortie.change, "WAF");
