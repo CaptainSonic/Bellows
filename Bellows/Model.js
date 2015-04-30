@@ -1,1 +1,1 @@
-﻿include("./Model/Utilisateurs/Utilisateurs-events.js");include("./Model/Soufflets/Soufflets-events.js");include("./Model/Matieres/Matieres-events.js");include("./Model/Outils/Outils-events.js");
+﻿include("./Model/Utilisateurs/Utilisateurs-events.js");include("./Model/Soufflets/Soufflets-events.js");include("./Model/Matieres/Matieres-events.js");include("./Model/Outils/Outils-events.js");include("./Model/TypeMat/TypeMat-events.js");

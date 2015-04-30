@@ -1,0 +1,1 @@
+﻿model.TypeMat.events.onInit = function() {	this.Actif = true;};
