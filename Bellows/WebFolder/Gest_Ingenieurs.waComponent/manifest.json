@@ -1,0 +1,6 @@
+{
+    "name"    : "Gest_Ingenieurs",    
+    "html"    : "Gest_Ingenieurs.html",
+    "styles"  : [],
+    "scripts" : ["Gest_Ingenieurs.js"]
+}
