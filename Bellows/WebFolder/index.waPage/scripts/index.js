@@ -2,6 +2,7 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var menuItem6 = {};	// @menuItem
 	var menuItem7 = {};	// @menuItem
 	var menuItem2 = {};	// @menuItem
 	var menuItem8 = {};	// @menuItem
@@ -14,6 +15,12 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion// @endlock
 
 // eventHandlers// @lock
+
+	menuItem6.click = function menuItem6_click (event)// @startlock
+	{// @endlock
+		$$("cchg").show();
+		$$('component1').loadComponent("/Gest_Bellows.waComponent");
+	};// @lock
 
 	menuItem7.click = function menuItem7_click (event)// @startlock
 	{// @endlock
@@ -95,6 +102,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("menuItem6", "click", menuItem6.click, "WAF");
 	WAF.addListener("menuItem7", "click", menuItem7.click, "WAF");
 	WAF.addListener("menuItem2", "click", menuItem2.click, "WAF");
 	WAF.addListener("menuItem8", "click", menuItem8.click, "WAF");
