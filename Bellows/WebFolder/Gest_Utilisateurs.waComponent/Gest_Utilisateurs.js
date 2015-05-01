@@ -182,7 +182,7 @@ function constructor (id) {
 		
 		UFonction = $$('component1_cFonction').getValue();
 		CAction = $$('component1_cAction').getValue();
-		Clogin = $$('component1_clogin').getValue();
+		Clogin = $$('component1_cLogin').getValue();
 				
 		$$('component1_bUpdate').show();
 		$$('component1_bNew').show();

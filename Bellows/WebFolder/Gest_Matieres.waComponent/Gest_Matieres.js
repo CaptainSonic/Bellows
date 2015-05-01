@@ -28,11 +28,13 @@ function constructor (id) {
 
 	fNom.keyup = function fNom_keyup (event)// @startlock
 	{// @endlock
+		$$('component1_fCode').setValue(null);
 		WAF.sources.component1_matieres.query("Nom = :1", event.currentTarget.value + "*");
 	};// @lock
 
 	fCode.keyup = function fCode_keyup (event)// @startlock
 	{// @endlock
+		$$('component1_fNom').setValue(null);
 		WAF.sources.component1_matieres.query("Code = :1", event.currentTarget.value + "*");
 	};// @lock
 
@@ -62,7 +64,7 @@ function constructor (id) {
 					NbSamNom = myCollection.length;
 					if (NbSamNom > 0) {
 						alert("Ce nom de matière (" + NomEntry +") est déjà utilisé. Merci de saisir un nom de matière différent");	
-						$$('component1_cCode').setValue(null);
+						$$('component1_cNom').setValue(null);
 						//$$('component1_clogin').focus(true);
 						$$('component1_bSave').disable();
 						}
