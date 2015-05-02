@@ -280,7 +280,7 @@ function constructor (id) {
 
 	btSearch.click = function btSearch_click (event)// @startlock
 	{// @endlock
-		var LQuery, pRef, pCode, pMat, pOutil, pForm, p1C1, p2C1, p1C2, p2C2;
+		var LQuery, pRef, pCode, pMat, pOutil, pForm, p1C1, p2C1, p1C2, p2C2, pParm, pParM;
 		
 		$$('component1_btShow').show();
 		$$('component1_Conception').show();
@@ -297,7 +297,7 @@ function constructor (id) {
 			pRef = "*" + $$('component1_sRef').getValue() + "*";
 		}
 		
-		
+				
 		if ($$('component1_sCode').getValue().length = 0) {
 			pCode = "*";
 		} else {
@@ -345,6 +345,71 @@ function constructor (id) {
 			} else {
 				LQuery = LQuery + "and Collet2 = :8 ";
 			}
+		}
+		
+		pParm = 0;
+		pParM = 0;
+		if ($$('component1_cbxParois').getValue()) {
+			pParm = parseInt($$('component1_stgParois').getValue(),10);
+			pParM = parseInt($$('component1_stdParois').getValue(),10);
+			//alert("Min "+ pParm + "  Max "+pParM);
+			LQuery = LQuery + "and ( Nb_Parois >= " + pParm + " and Nb_Parois <= " + pParM + ") ";
+		}
+		
+		pParm = 0;
+		pParM = 0;
+		if ($$('component1_cbxOndes').getValue()) {
+			pParm = $$('component1_stgOndes').getValue();
+			pParM = $$('component1_stdOndes').getValue();
+			LQuery = LQuery + "and ( Nb_Ondes >= " + pParm + " and Nb_Ondes <= " + pParM + ") ";
+		}
+		
+		pParm = 0;
+		pParM = 0;
+		if ($$('component1_cbxDiamCollet1').getValue()) {
+			pParm = $$('component1_stgCol1').getValue();
+			pParM = $$('component1_stdCol1').getValue();
+			LQuery = LQuery + "and ( Diam_Collet1 >= " + pParm + " and Diam_Collet1 <= " + pParM + ") ";
+		}
+		
+		pParm = 0;
+		pParM = 0;
+		if ($$('component1_cbxDiamCollet2').getValue()) {
+			pParm = $$('component1_stgCol2').getValue();
+			pParM = $$('component1_stdCol2').getValue();
+			LQuery = LQuery + "and ( Diam_Collet2 >= " + pParm + " and Diam_Collet2 <= " + pParM + ") ";
+		}
+		
+		pParm = 0;
+		pParM = 0;
+		if ($$('component1_cbxExt').getValue()) {
+			pParm = $$('component1_stgExt').getValue();
+			pParM = $$('component1_stdExt').getValue();
+			LQuery = LQuery + "and ( Ext_Onde >= " + pParm + " and Ext_Onde <= " + pParM + ") ";
+		}
+		
+		pParm = 0;
+		pParM = 0;
+		if ($$('component1_cbxInt').getValue()) {
+			pParm = $$('component1_stgInt').getValue();
+			pParM = $$('component1_stdInt').getValue();
+			LQuery = LQuery + "and ( Int_Onde >= " + pParm + " and Int_Onde <= " + pParM + ") ";
+		}
+		
+		pParm = 0;
+		pParM = 0;
+		if ($$('component1_cbxL2').getValue()) {
+			pParm = $$('component1_stgL2').getValue();
+			pParM = $$('component1_stdL2').getValue();
+			LQuery = LQuery + "and ( L2 >= " + pParm + " and L2 <= " + pParM + ") ";
+		}
+		
+		pParm = 0;
+		pParM = 0;
+		if ($$('component1_cbxL3').getValue()) {
+			pParm = $$('component1_stgL3').getValue();
+			pParM = $$('component1_stdL3').getValue();
+			LQuery = LQuery + "and ( L3 >= " + pParm + " and L3 <= " + pParM + ") ";
 		}
 		
 		//WAF.sources.component1_soufflets.query();
