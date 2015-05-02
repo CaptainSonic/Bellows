@@ -2,6 +2,9 @@
 (function Component (id) {// @lock
 
 // Add the code that needs to be shared between components here
+var wURL = window.location.href,
+	wPathname = window.location.pathname,
+	iFrame;
 
 function constructor (id) {
 
@@ -25,6 +28,7 @@ function constructor (id) {
 
 
 	// @region namespaceDeclaration// @startlock
+	var BtExport = {};	// @buttonImage
 	var btReset = {};	// @buttonImage
 	var cbxOutil = {};	// @checkbox
 	var slL3 = {};	// @slider
@@ -49,6 +53,21 @@ function constructor (id) {
 	// @endregion// @endlock
 
 	// eventHandlers// @lock
+
+	BtExport.click = function BtExport_click (event)// @startlock
+	{// @endlock
+		if (wPathname.indexOf("index") != -1) {
+			wExportURL = wURL.replace(wPathname, '');
+			wExportURL += "/exportBellows";
+			wExportURL += ".xls";
+		} else {
+			wExportURL = wURL;
+			wExportURL += "exportBellows";
+			wExportURL += ".xls";
+		}
+
+		$('#component1_frame1 iframe').attr('src',wExportURL);
+	};// @lock
 
 	btReset.click = function btReset_click (event)// @startlock
 	{// @endlock
@@ -481,6 +500,7 @@ function constructor (id) {
 	};// @lock
 
 	// @region eventManager// @startlock
+	WAF.addListener(this.id + "_BtExport", "click", BtExport.click, "WAF");
 	WAF.addListener(this.id + "_btReset", "click", btReset.click, "WAF");
 	WAF.addListener(this.id + "_cbxOutil", "click", cbxOutil.click, "WAF");
 	WAF.addListener(this.id + "_slL3", "slidechange", slL3.slidechange, "WAF");
