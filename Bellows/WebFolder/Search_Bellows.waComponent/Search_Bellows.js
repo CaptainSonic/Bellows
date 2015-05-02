@@ -28,7 +28,7 @@ function constructor (id) {
 
 
 	// @region namespaceDeclaration// @startlock
-	var BtExport = {};	// @buttonImage
+	var btExport = {};	// @buttonImage
 	var btReset = {};	// @buttonImage
 	var cbxOutil = {};	// @checkbox
 	var slL3 = {};	// @slider
@@ -54,7 +54,7 @@ function constructor (id) {
 
 	// eventHandlers// @lock
 
-	BtExport.click = function BtExport_click (event)// @startlock
+	btExport.click = function btExport_click (event)// @startlock
 	{// @endlock
 		if (wPathname.indexOf("index") != -1) {
 			wExportURL = wURL.replace(wPathname, '');
@@ -352,6 +352,7 @@ function constructor (id) {
 		var LQuery, pRef, pCode, pMat, pOutil, pForm, p1C1, p2C1, p1C2, p2C2, pParm, pParM;
 		
 		$$('component1_btShow').show();
+		$$('component1_btExport').show();
 		$$('component1_Conception').show();
 		$$('component1_Hydro').show();
 		$$('component1_ListBell').enable();
@@ -491,6 +492,7 @@ function constructor (id) {
 	btShow.click = function btShow_click (event)// @startlock
 	{// @endlock
 		$$('component1_btShow').hide();
+		$$('component1_btExport').hide();
 		$$('component1_Conception').hide();
 		$$('component1_Hydro').hide();
 		$$('component1_ListBell').disable();
@@ -500,7 +502,7 @@ function constructor (id) {
 	};// @lock
 
 	// @region eventManager// @startlock
-	WAF.addListener(this.id + "_BtExport", "click", BtExport.click, "WAF");
+	WAF.addListener(this.id + "_btExport", "click", btExport.click, "WAF");
 	WAF.addListener(this.id + "_btReset", "click", btReset.click, "WAF");
 	WAF.addListener(this.id + "_cbxOutil", "click", cbxOutil.click, "WAF");
 	WAF.addListener(this.id + "_slL3", "slidechange", slL3.slidechange, "WAF");
