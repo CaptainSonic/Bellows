@@ -18,9 +18,23 @@ function constructor (id) {
 	$$('component1_slOndes').addHandle(40);
 	$$('component1_slDiamCollet1').addHandle(130);	
 	$$('component1_slDiamCollet2').addHandle(130);	
+	$$('component1_slExt').addHandle(130);	
+	$$('component1_slInt').addHandle(130);	
+	$$('component1_slL2').addHandle(130);	
+	$$('component1_slL3').addHandle(130);	
 
 
 	// @region namespaceDeclaration// @startlock
+	var cbxOutil = {};	// @checkbox
+	var slL3 = {};	// @slider
+	var slL2 = {};	// @slider
+	var slInt = {};	// @slider
+	var slExt = {};	// @slider
+	var cbxInt = {};	// @checkbox
+	var cbxL2 = {};	// @checkbox
+	var cbxL3 = {};	// @checkbox
+	var cbxExt = {};	// @checkbox
+	var cbxMatiere = {};	// @checkbox
 	var cbxDiamCollet2 = {};	// @checkbox
 	var slDiamCollet2 = {};	// @slider
 	var slDiamCollet1 = {};	// @slider
@@ -34,6 +48,128 @@ function constructor (id) {
 	// @endregion// @endlock
 
 	// eventHandlers// @lock
+
+	cbxOutil.click = function cbxOutil_click (event)// @startlock
+	{// @endlock
+		if ($$('component1_cbxOutil').getValue()) {
+			$$('component1_cbOutil').show();
+		} else {
+			$$('component1_cbOutil').hide();
+		}
+	};// @lock
+
+	slL3.slidechange = function slL3_slidechange (event)// @startlock
+	{// @endlock
+		$$('component1_stgL3').setValue(event.data.values[0]); 
+		$$('component1_stdL3').setValue(event.data.values[1]);
+	};// @lock
+
+	slL3.slide = function slL3_slide (event)// @startlock
+	{// @endlock
+		$$('component1_stgL3').setValue(event.data.values[0]); 
+		$$('component1_stdL3').setValue(event.data.values[1]);
+	};// @lock
+
+	slL2.slidechange = function slL2_slidechange (event)// @startlock
+	{// @endlock
+		$$('component1_stgL2').setValue(event.data.values[0]); 
+		$$('component1_stdL2').setValue(event.data.values[1]);
+	};// @lock
+
+	slL2.slide = function slL2_slide (event)// @startlock
+	{// @endlock
+		$$('component1_stgL2').setValue(event.data.values[0]); 
+		$$('component1_stdL2').setValue(event.data.values[1]);
+	};// @lock
+
+	slInt.slidechange = function slInt_slidechange (event)// @startlock
+	{// @endlock
+		$$('component1_stgInt').setValue(event.data.values[0]); 
+		$$('component1_stdInt').setValue(event.data.values[1]);
+	};// @lock
+
+	slInt.slide = function slInt_slide (event)// @startlock
+	{// @endlock
+		$$('component1_stgInt').setValue(event.data.values[0]); 
+		$$('component1_stdInt').setValue(event.data.values[1]);
+	};// @lock
+
+	slExt.slidechange = function slExt_slidechange (event)// @startlock
+	{// @endlock
+		$$('component1_stgExt').setValue(event.data.values[0]); 
+		$$('component1_stdExt').setValue(event.data.values[1]);
+	};// @lock
+
+	slExt.slide = function slExt_slide (event)// @startlock
+	{// @endlock
+		$$('component1_stgExt').setValue(event.data.values[0]); 
+		$$('component1_stdExt').setValue(event.data.values[1]);
+	};// @lock
+
+	cbxInt.click = function cbxInt_click (event)// @startlock
+	{// @endlock
+		if ($$('component1_cbxInt').getValue()) {
+			$$('component1_slInt').show();
+			$$('component1_stgInt').show();
+			$$('component1_stdInt').show();
+			$$('component1_slInt').setValues([5,20]);
+		} else {
+			$$('component1_slInt').hide();
+			$$('component1_stgInt').hide();
+			$$('component1_stdInt').hide();
+		}
+	};// @lock
+
+	cbxL2.click = function cbxL2_click (event)// @startlock
+	{// @endlock
+		if ($$('component1_cbxL2').getValue()) {
+			$$('component1_slL2').show();
+			$$('component1_stgL2').show();
+			$$('component1_stdL2').show();
+			$$('component1_slL2').setValues([10,30]);
+		} else {
+			$$('component1_slL2').hide();
+			$$('component1_stgL2').hide();
+			$$('component1_stdL2').hide();
+		}
+	};// @lock
+
+	cbxL3.click = function cbxL3_click (event)// @startlock
+	{// @endlock
+		if ($$('component1_cbxL3').getValue()) {
+			$$('component1_slL3').show();
+			$$('component1_stgL3').show();
+			$$('component1_stdL3').show();
+			$$('component1_slL3').setValues([10,30]);
+		} else {
+			$$('component1_slL3').hide();
+			$$('component1_stgL3').hide();
+			$$('component1_stdL3').hide();
+		}
+	};// @lock
+
+	cbxExt.click = function cbxExt_click (event)// @startlock
+	{// @endlock
+		if ($$('component1_cbxExt').getValue()) {
+			$$('component1_slExt').show();
+			$$('component1_stgExt').show();
+			$$('component1_stdExt').show();
+			$$('component1_slExt').setValues([10,30]);
+		} else {
+			$$('component1_slExt').hide();
+			$$('component1_stgExt').hide();
+			$$('component1_stdExt').hide();
+		}
+	};// @lock
+
+	cbxMatiere.click = function cbxMatiere_click (event)// @startlock
+	{// @endlock
+		if ($$('component1_cbxMatiere').getValue()) {
+			$$('component1_cbMatiere').show();
+		} else {
+			$$('component1_cbMatiere').hide();
+		}
+	};// @lock
 
 	cbxDiamCollet2.click = function cbxDiamCollet2_click (event)// @startlock
 	{// @endlock
@@ -164,6 +300,20 @@ function constructor (id) {
 	};// @lock
 
 	// @region eventManager// @startlock
+	WAF.addListener(this.id + "_cbxOutil", "click", cbxOutil.click, "WAF");
+	WAF.addListener(this.id + "_slL3", "slidechange", slL3.slidechange, "WAF");
+	WAF.addListener(this.id + "_slL3", "slide", slL3.slide, "WAF");
+	WAF.addListener(this.id + "_slL2", "slidechange", slL2.slidechange, "WAF");
+	WAF.addListener(this.id + "_slL2", "slide", slL2.slide, "WAF");
+	WAF.addListener(this.id + "_slInt", "slidechange", slInt.slidechange, "WAF");
+	WAF.addListener(this.id + "_slInt", "slide", slInt.slide, "WAF");
+	WAF.addListener(this.id + "_slExt", "slidechange", slExt.slidechange, "WAF");
+	WAF.addListener(this.id + "_slExt", "slide", slExt.slide, "WAF");
+	WAF.addListener(this.id + "_cbxInt", "click", cbxInt.click, "WAF");
+	WAF.addListener(this.id + "_cbxL2", "click", cbxL2.click, "WAF");
+	WAF.addListener(this.id + "_cbxL3", "click", cbxL3.click, "WAF");
+	WAF.addListener(this.id + "_cbxExt", "click", cbxExt.click, "WAF");
+	WAF.addListener(this.id + "_cbxMatiere", "click", cbxMatiere.click, "WAF");
 	WAF.addListener(this.id + "_cbxDiamCollet2", "click", cbxDiamCollet2.click, "WAF");
 	WAF.addListener(this.id + "_slDiamCollet2", "slidechange", slDiamCollet2.slidechange, "WAF");
 	WAF.addListener(this.id + "_slDiamCollet2", "slide", slDiamCollet2.slide, "WAF");
