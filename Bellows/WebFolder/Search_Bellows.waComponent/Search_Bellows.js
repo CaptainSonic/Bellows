@@ -25,6 +25,7 @@ function constructor (id) {
 
 
 	// @region namespaceDeclaration// @startlock
+	var btReset = {};	// @buttonImage
 	var cbxOutil = {};	// @checkbox
 	var slL3 = {};	// @slider
 	var slL2 = {};	// @slider
@@ -48,6 +49,55 @@ function constructor (id) {
 	// @endregion// @endlock
 
 	// eventHandlers// @lock
+
+	btReset.click = function btReset_click (event)// @startlock
+	{// @endlock
+		$$('component1_slInt').hide();
+		$$('component1_stgInt').hide();
+		$$('component1_stdInt').hide();
+		$$('component1_slL2').hide();
+		$$('component1_stgL2').hide();
+		$$('component1_stdL2').hide();
+		$$('component1_slL3').hide();
+		$$('component1_stgL3').hide();
+		$$('component1_stdL3').hide();
+		$$('component1_slExt').hide();
+		$$('component1_stgExt').hide();
+		$$('component1_stdExt').hide();
+		$$('component1_slDiamCollet1').hide();
+		$$('component1_stgCol1').hide();
+		$$('component1_stdCol1').hide();
+		$$('component1_slDiamCollet2').hide();
+		$$('component1_stgCol2').hide();
+		$$('component1_stdCol2').hide();
+		$$('component1_slOndes').hide();
+		$$('component1_stgOndes').hide();
+		$$('component1_stdOndes').hide();
+		$$('component1_slParois').hide();
+		$$('component1_stgParois').hide();
+		$$('component1_stdParois').hide();
+		$$('component1_cbMatiere').hide();
+		$$('component1_cbOutil').hide();
+		$$('component1_sRef').setValue(null);
+		$$('component1_sCode').setValue(null);
+		$$('component1_cbCollet1').setValue("-");
+		$$('component1_cbbCollet1').setValue("-");
+		$$('component1_cbCollet2').setValue("-");
+		$$('component1_cbbCollet2').setValue("-");
+		$$('component1_cbForm').setValue("-");
+		$$('component1_cbxInt').uncheck();
+		$$('component1_cbxL2').uncheck();
+		$$('component1_cbxL3').uncheck();
+		$$('component1_cbxExt').uncheck();
+		$$('component1_cbxInt').uncheck();
+		$$('component1_cbxDiamCollet2').uncheck();
+		$$('component1_cbxDiamCollet1').uncheck();
+		$$('component1_cbxOndes').uncheck();
+		$$('component1_cbxParois').uncheck();
+		$$('component1_cbxMatiere').uncheck();
+		$$('component1_cbxOutil').uncheck();
+		
+	};// @lock
 
 	cbxOutil.click = function cbxOutil_click (event)// @startlock
 	{// @endlock
@@ -431,6 +481,7 @@ function constructor (id) {
 	};// @lock
 
 	// @region eventManager// @startlock
+	WAF.addListener(this.id + "_btReset", "click", btReset.click, "WAF");
 	WAF.addListener(this.id + "_cbxOutil", "click", cbxOutil.click, "WAF");
 	WAF.addListener(this.id + "_slL3", "slidechange", slL3.slidechange, "WAF");
 	WAF.addListener(this.id + "_slL3", "slide", slL3.slide, "WAF");
