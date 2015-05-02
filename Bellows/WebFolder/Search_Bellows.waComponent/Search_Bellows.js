@@ -280,12 +280,78 @@ function constructor (id) {
 
 	btSearch.click = function btSearch_click (event)// @startlock
 	{// @endlock
+		var LQuery, pRef, pCode, pMat, pOutil, pForm, p1C1, p2C1, p1C2, p2C2;
+		
 		$$('component1_btShow').show();
 		$$('component1_Conception').show();
 		$$('component1_Hydro').show();
 		$$('component1_ListBell').enable();
 		$$('component1_ListBell').setReadOnly(true);
 		$$('component1_PanelSearch').hide();
+		
+		
+		LQuery = "Reference = :1 ";
+		if ($$('component1_sRef').getValue().length = 0) {
+			pRef = "*";
+		} else {
+			pRef = "*" + $$('component1_sRef').getValue() + "*";
+		}
+		
+		
+		if ($$('component1_sCode').getValue().length = 0) {
+			pCode = "*";
+		} else {
+			pCode = "*" + $$('component1_sCode').getValue() + "*";
+			LQuery = LQuery + "and Code = :2 ";
+		}
+		
+		pMat = "*";
+		if ($$('component1_cbxMatiere').getValue()) {
+			pMat = $$('component1_cbMatiere').getValue();
+			LQuery = LQuery + "and Matiere.ID = :3 ";
+		}
+		
+		pOutil = "*";
+		if ($$('component1_cbxOutil').getValue()) {
+			pOutil = $$('component1_cbOutil').getValue();
+			LQuery = LQuery + "and Outil.ID = :4 ";
+		}
+		
+		pForm = "*";
+		if ($$('component1_cbForm').getValue() !== "-") {
+			pForm = $$('component1_cbForm').getValue();
+			LQuery = LQuery + "and Type_Formage = :5 ";
+		}
+		
+		p1C1 = "*";
+		if ($$('component1_cbCollet1').getValue() !== "-") {
+			p1C1 = $$('component1_cbCollet1').getValue();
+			p2C1 = "*";
+			if ($$('component1_cbbCollet1').getValue() !== "-") {
+				p2C1 = $$('component1_cbbCollet1').getValue();
+				LQuery = LQuery + "and ( Collet1 = :6 or Collet1 = :7) ";
+			} else {
+				LQuery = LQuery + "and Collet1 = :6 ";
+			}
+		}
+		
+		p1C2 = "*";
+		if ($$('component1_cbCollet2').getValue() !== "-") {
+			p1C2 = $$('component1_cbCollet2').getValue();
+			p2C2 = "*";
+			if ($$('component1_cbbCollet2').getValue() !== "-") {
+				p2C2 = $$('component1_cbbCollet2').getValue();
+				LQuery = LQuery + "and ( Collet2 = :8 or Collet2 = :9) ";
+			} else {
+				LQuery = LQuery + "and Collet2 = :8 ";
+			}
+		}
+		
+		//WAF.sources.component1_soufflets.query();
+		WAF.sources.component1_soufflets.query(LQuery, pRef, pCode, pMat, pOutil, pForm, p1C1, p2C1, p1C2, p2C2);
+		
+		
+		
 	};// @lock
 
 	btShow.click = function btShow_click (event)// @startlock
