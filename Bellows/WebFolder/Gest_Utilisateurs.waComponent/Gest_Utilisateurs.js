@@ -107,7 +107,7 @@ function constructor (id) {
 		DFin = $$('component1_cDateSortie').getValue();
 		CDebut = DDebut.substring(6,10) + DDebut.substring(3,5) + DDebut.substring(0,2); 
 		CFin = DFin.substring(6,10) + DFin.substring(3,5) + DFin.substring(0,2); 
-		//alert (CDebut + CFin);
+		//alert (CDebut + " " + CFin);
 		if (DFin.length > 0) {
 			//alert('date fin non nulle');
 			if ( CFin < CDebut) {
