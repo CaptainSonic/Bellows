@@ -16,12 +16,12 @@ function constructor (id) {
 	$$("component1_ListBell").setRowHeight(22);
 	$$('component1_slParois').addHandle(30);
 	$$('component1_slOndes').addHandle(40);
-	$$('component1_slDiamCollet1').addHandle(130);	
-	$$('component1_slDiamCollet2').addHandle(130);	
-	$$('component1_slExt').addHandle(130);	
-	$$('component1_slInt').addHandle(130);	
-	$$('component1_slL2').addHandle(130);	
-	$$('component1_slL3').addHandle(130);	
+	$$('component1_slDiamCollet1').addHandle(800);	
+	$$('component1_slDiamCollet2').addHandle(800);	
+	$$('component1_slExt').addHandle(800);	
+	$$('component1_slInt').addHandle(800);	
+	$$('component1_slL2').addHandle(400);	
+	$$('component1_slL3').addHandle(400);	
 	$$('component1_slEp').addHandle(2000);	
 
 
