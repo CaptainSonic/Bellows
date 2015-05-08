@@ -382,7 +382,7 @@ function constructor (id) {
 
 	btSearch.click = function btSearch_click (event)// @startlock
 	{// @endlock
-		var LQuery, pRef, pCode, pMat, pOutil, pForm, p1C1, p2C1, p1C2, p2C2, pParm, pParM;
+		var LQuery, pRef, pCode, pMat, pOutil, pForm, p1C1, p2C1, p1C2, p2C2, pParm, pParM, vUser;
 		
 		$$('component1_btShow').show();
 		$$('component1_btExport').show();
@@ -524,6 +524,29 @@ function constructor (id) {
 		
 		//alert(LQuery);
 		//WAF.sources.component1_soufflets.query();
+		
+		vUser = WAF.directory.currentUser().userName;
+		//alert(vUser);
+		sources.component1_utilisateurs.query("Login = :1", { onSuccess: function(event) { 
+			var vUser;
+			vUser = WAF.directory.currentUser().userName;
+    		sources.component1_userParam.query("Utilisateur.Login = :1", { onSuccess: function(event) { 
+    			elem = sources.component1_userParam;
+    			if (elem.length === 0) {
+     				sources.component1_userParam.addNewElement();
+     				sources.component1_utilisateurs.query("Login = :1", { onSuccess: function(event) { 
+      					sources.component1_userParam.Utilisateur.set(sources.component1_utilisateurs);
+      					sources.component1_userParam.StQuery = LQuery;
+      		      		sources.component1_userParam.save();
+     				}, params:[vUser] });
+    			} else {
+     				sources.component1_userParam.StQuery = LQuery;
+     				sources.component1_userParam.save();
+    			}
+    		}, params:[vUser] });
+    		
+    	}, params:[vUser] });
+		
 		WAF.sources.component1_soufflets.query(LQuery);
 		
 		
