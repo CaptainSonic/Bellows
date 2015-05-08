@@ -2,6 +2,7 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var menuItem10 = {};	// @menuItem
 	var menuItem9 = {};	// @menuItem
 	var menuItem6 = {};	// @menuItem
 	var menuItem7 = {};	// @menuItem
@@ -16,6 +17,12 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion// @endlock
 
 // eventHandlers// @lock
+
+	menuItem10.click = function menuItem10_click (event)// @startlock
+	{// @endlock
+		$$("cchg").show();
+		$$('component1').loadComponent("/Compare_Bellows.waComponent");
+	};// @lock
 
 	menuItem9.click = function menuItem9_click (event)// @startlock
 	{// @endlock
@@ -109,6 +116,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("menuItem10", "click", menuItem10.click, "WAF");
 	WAF.addListener("menuItem9", "click", menuItem9.click, "WAF");
 	WAF.addListener("menuItem6", "click", menuItem6.click, "WAF");
 	WAF.addListener("menuItem7", "click", menuItem7.click, "WAF");
