@@ -16,6 +16,8 @@ function constructor (id) {
 	$$("component1_ListBell").setRowHeight(22);
 
 	// @region namespaceDeclaration// @startlock
+	var btnMat = {};	// @buttonImage
+	var btnOut = {};	// @buttonImage
 	var cNbParois = {};	// @textField
 	var cAnnee = {};	// @textField
 	var cShSx = {};	// @combobox
@@ -30,6 +32,16 @@ function constructor (id) {
 	// @endregion// @endlock
 
 	// eventHandlers// @lock
+
+	btnMat.click = function btnMat_click (event)// @startlock
+	{// @endlock
+		WAF.sources.component1_matieres.query("Actif is true order by Nom");
+	};// @lock
+
+	btnOut.click = function btnOut_click (event)// @startlock
+	{// @endlock
+		WAF.sources.component1_outils.query("Actif is true order by Référence");
+	};// @lock
 
 	cNbParois.change = function cNbParois_change (event)// @startlock
 	{// @endlock
@@ -216,6 +228,8 @@ function constructor (id) {
 		$$('component1_xMatCode').hide();
 		$$('component1_cMatTyp').show();
 		$$('component1_xMatTyp').hide();
+		$$('component1_btnOut').hide();
+		$$('component1_btnMat').hide();
 
 
 		sources.component1_soufflets.Matiere.set(sources.component1_matieres);
@@ -281,12 +295,14 @@ function constructor (id) {
 		
 		vTrsf = $$('component1_cxMat').getValue();
 		$$('component1_cbMat').setValue(vTrsf);
+		$$('component1_btnMat').show();
 		vTrsf = $$('component1_cCollet1').getValue();
 		$$('component1_cbCollet1').setValue(vTrsf);
 		vTrsf = $$('component1_cCollet2').getValue();
 		$$('component1_cbCollet2').setValue(vTrsf);
 		vTrsf = $$('component1_cxRefOut').getValue();
 		$$('component1_cbRefOut').setValue(vTrsf);
+		$$('component1_btnOut').show();
 		vTrsf = $$('component1_cForm').getValue();
 		$$('component1_cbForm').setValue(vTrsf);
 		
@@ -354,6 +370,8 @@ function constructor (id) {
 		
 		$$('component1_cRefC').focus();
 		$$('component1_cAction').setValue("Créer");
+		WAF.sources.component1_outils.query("Actif is true order by Référence");
+		WAF.sources.component1_matieres.query("Actif is true order by Nom");
 					
 	};// @lock
 
@@ -370,6 +388,8 @@ function constructor (id) {
 	};// @lock
 
 	// @region eventManager// @startlock
+	WAF.addListener(this.id + "_btnMat", "click", btnMat.click, "WAF");
+	WAF.addListener(this.id + "_btnOut", "click", btnOut.click, "WAF");
 	WAF.addListener(this.id + "_cNbParois", "change", cNbParois.change, "WAF");
 	WAF.addListener(this.id + "_cAnnee", "change", cAnnee.change, "WAF");
 	WAF.addListener(this.id + "_cShSx", "blur", cShSx.blur, "WAF");
