@@ -21,7 +21,6 @@ function constructor (id) {
 	var cNbParois = {};	// @textField
 	var cAnnee = {};	// @textField
 	var cShSx = {};	// @combobox
-	var cCode = {};	// @textField
 	var cRefC = {};	// @textField
 	var bUndo = {};	// @button
 	var bSave = {};	// @button
@@ -87,28 +86,6 @@ function constructor (id) {
 						$$('component1_bSave').disable();
 						}
 					}, params:[vRef] 
-				});
-		}
-	};// @lock
-
-	cCode.blur = function cCode_blur (event)// @startlock
-	{// @endlock
-		var CodeEntry, NbSamCode, vAction;
-		
-		CodeEntry = event.currentTarget.value;
-		vAction = $$('component1_cAction').getValue();
-		if (vAction === "Créer") {
-			ds.Soufflets.query("Code=:1", { 
-				onSuccess:function(event) {
-					var myCollection = event.entityCollection;
-					NbSamCode = myCollection.length;
-					if (NbSamCode > 0) {
-						alert("Ce code de soufflet (" + CodeEntry +") est déjà utilisé. Merci de saisir un code de soufflet différent");	
-						$$('component1_cCode').setValue(null);
-						//$$('component1_clogin').focus(true);
-						$$('component1_bSave').disable();
-						}
-					}, params:[CodeEntry] 
 				});
 		}
 	};// @lock
@@ -371,7 +348,8 @@ function constructor (id) {
 		$$('component1_cRefC').focus();
 		$$('component1_cAction').setValue("Créer");
 		WAF.sources.component1_outils.query("Actif is true order by Référence");
-		WAF.sources.component1_matieres.query("Actif is true order by Nom");
+		//WAF.sources.component1_matieres.query("Actif is true order by Nom");
+		$$('component1_btnMat').show();
 					
 	};// @lock
 
@@ -394,7 +372,6 @@ function constructor (id) {
 	WAF.addListener(this.id + "_cAnnee", "change", cAnnee.change, "WAF");
 	WAF.addListener(this.id + "_cShSx", "blur", cShSx.blur, "WAF");
 	WAF.addListener(this.id + "_cRefC", "change", cRefC.change, "WAF");
-	WAF.addListener(this.id + "_cCode", "blur", cCode.blur, "WAF");
 	WAF.addListener(this.id + "_cRefC", "blur", cRefC.blur, "WAF");
 	WAF.addListener(this.id + "_bUndo", "click", bUndo.click, "WAF");
 	WAF.addListener(this.id + "_bSave", "click", bSave.click, "WAF");

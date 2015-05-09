@@ -394,14 +394,14 @@ function constructor (id) {
 		
 		
 		
-		if ($$('component1_sRef').getValue().length = 0) {
+		if ($$('component1_sRef').getValue().length === 0) {
 			LQuery = "Reference = '*' and Actif is true ";
 		} else {
 			LQuery = "Reference = '*" + $$('component1_sRef').getValue() + "*' and Actif is true ";
 		}
 		
-				
-		if ($$('component1_sCode').getValue().length = 0) {
+		//alert($$('component1_sCode').getValue().length);		
+		if ($$('component1_sCode').getValue().length === 0) {
 			pCode = "*";
 		} else {
 			LQuery = LQuery + "and Code = '*" + $$('component1_sCode').getValue() + "*' ";

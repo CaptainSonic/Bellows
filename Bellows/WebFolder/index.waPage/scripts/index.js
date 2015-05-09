@@ -8,7 +8,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	var menuItem7 = {};	// @menuItem
 	var menuItem2 = {};	// @menuItem
 	var menuItem8 = {};	// @menuItem
-	var menuItem5 = {};	// @menuItem
 	var menuItem1 = {};	// @menuItem
 	var documentEvent = {};	// @document
 	var M_Apropos = {};	// @menuItem
@@ -52,12 +51,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	{// @endlock
 		$$("cchg").show();
 		$$('component1').loadComponent("/Gest_Matieres.waComponent");
-	};// @lock
-
-	menuItem5.click = function menuItem5_click (event)// @startlock
-	{// @endlock
-		$$("cchg").show();
-		$$('component1').loadComponent("/Gest_Ingenieurs.waComponent");
 	};// @lock
 
 	menuItem1.click = function menuItem1_click (event)// @startlock
@@ -122,7 +115,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	WAF.addListener("menuItem7", "click", menuItem7.click, "WAF");
 	WAF.addListener("menuItem2", "click", menuItem2.click, "WAF");
 	WAF.addListener("menuItem8", "click", menuItem8.click, "WAF");
-	WAF.addListener("menuItem5", "click", menuItem5.click, "WAF");
 	WAF.addListener("menuItem1", "click", menuItem1.click, "WAF");
 	WAF.addListener("document", "onLoad", documentEvent.onLoad, "WAF");
 	WAF.addListener("M_Apropos", "click", M_Apropos.click, "WAF");
