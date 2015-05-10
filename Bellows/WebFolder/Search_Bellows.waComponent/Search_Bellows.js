@@ -17,6 +17,7 @@ function constructor (id) {
 		
 	$$("cchg").hide();
 	$$("component1_ListBell").setRowHeight(22);
+	$$("component1_ListLarge").setRowHeight(20);
 	$$('component1_slParois').addHandle(30);
 	$$('component1_slOndes').addHandle(40);
 	$$('component1_slDiamCollet1').addHandle(8000);	
@@ -29,6 +30,8 @@ function constructor (id) {
 
 
 	// @region namespaceDeclaration// @startlock
+	var btSmall = {};	// @buttonImage
+	var btLarge = {};	// @buttonImage
 	var slEp = {};	// @slider
 	var cbxEp = {};	// @checkbox
 	var btExport = {};	// @buttonImage
@@ -56,6 +59,34 @@ function constructor (id) {
 	// @endregion// @endlock
 
 	// eventHandlers// @lock
+
+	btSmall.click = function btSmall_click (event)// @startlock
+	{// @endlock
+		$$('component1_btShow').show();
+		$$('component1_btLarge').show();
+		$$('component1_btSmall').hide();
+		$$('component1_btExport').show();
+		$$('component1_Conception').show();
+		$$('component1_Hydro').show();
+		$$('component1_ListBell').show();
+		$$('component1_ListLarge').hide();
+		
+		
+	};// @lock
+
+	btLarge.click = function btLarge_click (event)// @startlock
+	{// @endlock
+		$$('component1_btShow').hide();
+		$$('component1_btLarge').hide();
+		$$('component1_btSmall').show();
+		$$('component1_btExport').hide();
+		$$('component1_Conception').hide();
+		$$('component1_Hydro').hide();
+		$$('component1_ListBell').hide();
+		$$('component1_ListLarge').show();
+		
+		
+	};// @lock
 
 	slEp.slidechange = function slEp_slidechange (event)// @startlock
 	{// @endlock
@@ -385,6 +416,7 @@ function constructor (id) {
 		var LQuery, pRef, pCode, pMat, pOutil, pForm, p1C1, p2C1, p1C2, p2C2, pParm, pParM, vUser;
 		
 		$$('component1_btShow').show();
+		$$('component1_btLarge').show();
 		$$('component1_btExport').show();
 		$$('component1_Conception').show();
 		$$('component1_Hydro').show();
@@ -557,6 +589,7 @@ function constructor (id) {
 	{// @endlock
 		$$('component1_btShow').hide();
 		$$('component1_btExport').hide();
+		$$('component1_btLarge').hide();
 		$$('component1_Conception').hide();
 		$$('component1_Hydro').hide();
 		$$('component1_ListBell').disable();
@@ -566,6 +599,8 @@ function constructor (id) {
 	};// @lock
 
 	// @region eventManager// @startlock
+	WAF.addListener(this.id + "_btSmall", "click", btSmall.click, "WAF");
+	WAF.addListener(this.id + "_btLarge", "click", btLarge.click, "WAF");
 	WAF.addListener(this.id + "_slEp", "slidechange", slEp.slidechange, "WAF");
 	WAF.addListener(this.id + "_slEp", "slide", slEp.slide, "WAF");
 	WAF.addListener(this.id + "_cbxEp", "click", cbxEp.click, "WAF");
