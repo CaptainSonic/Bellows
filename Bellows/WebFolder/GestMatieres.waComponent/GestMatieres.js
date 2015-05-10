@@ -13,6 +13,7 @@ function constructor (id) {
 	this.load = function (data) {// @lock
 		
 		$$("cchg").hide();
+		$$("cQuick").hide();
 
 	// @region namespaceDeclaration// @startlock
 	var ListMat = {};	// @dataGrid

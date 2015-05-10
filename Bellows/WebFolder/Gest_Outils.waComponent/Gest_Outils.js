@@ -13,6 +13,7 @@ function constructor (id) {
 	this.load = function (data) {// @lock
 
 	$$("cchg").hide();
+	$$("cQuick").hide();
 	$$("component1_ListOutils").setRowHeight(22);
 	$$("component1_ListBell").setRowHeight(20);
 	// @region namespaceDeclaration// @startlock

@@ -2,6 +2,8 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var btCompare = {};	// @buttonImage
+	var btSearch = {};	// @buttonImage
 	var menuItem10 = {};	// @menuItem
 	var menuItem9 = {};	// @menuItem
 	var menuItem6 = {};	// @menuItem
@@ -16,6 +18,20 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion// @endlock
 
 // eventHandlers// @lock
+
+	btCompare.click = function btCompare_click (event)// @startlock
+	{// @endlock
+		$$("cchg").show();
+		$$("cQuick").hide();
+		$$('component1').loadComponent("/Compare_Bellows.waComponent");
+	};// @lock
+
+	btSearch.click = function btSearch_click (event)// @startlock
+	{// @endlock
+		$$("cchg").show();
+		$$("cQuick").hide();
+		$$('component1').loadComponent("/Search_Bellows.waComponent");
+	};// @lock
 
 	menuItem10.click = function menuItem10_click (event)// @startlock
 	{// @endlock
@@ -109,6 +125,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("btCompare", "click", btCompare.click, "WAF");
+	WAF.addListener("btSearch", "click", btSearch.click, "WAF");
 	WAF.addListener("menuItem10", "click", menuItem10.click, "WAF");
 	WAF.addListener("menuItem9", "click", menuItem9.click, "WAF");
 	WAF.addListener("menuItem6", "click", menuItem6.click, "WAF");

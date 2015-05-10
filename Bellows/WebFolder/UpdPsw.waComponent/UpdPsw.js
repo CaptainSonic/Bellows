@@ -18,6 +18,7 @@ function constructor (id) {
 		$$('component1_btSave').disable();
 		$$('component1_cAction').setValue("UpdPswd");
 		$$("cchg").hide();
+		$$("cQuick").hide();
 
 
 	// @region namespaceDeclaration// @startlock

@@ -13,6 +13,7 @@ function constructor (id) {
 	this.load = function (data) {// @lock
 
 	$$("cchg").hide();
+	$$("cQuick").hide();
 	$$("component1_ListBell").setRowHeight(22);
 	$$('component1_slParois').addHandle(30);
 	$$('component1_slOndes').addHandle(40);

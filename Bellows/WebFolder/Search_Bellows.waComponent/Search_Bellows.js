@@ -16,6 +16,7 @@ function constructor (id) {
 	this.load = function (data) {// @lock
 		
 	$$("cchg").hide();
+	$$("cQuick").hide();
 	$$("component1_ListBell").setRowHeight(22);
 	$$("component1_ListLarge").setRowHeight(20);
 	$$('component1_slParois').addHandle(30);
