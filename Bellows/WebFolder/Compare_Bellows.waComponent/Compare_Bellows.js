@@ -16,10 +16,10 @@ function constructor (id) {
 	$$("component1_ListBell").setRowHeight(22);
 	$$('component1_slParois').addHandle(30);
 	$$('component1_slOndes').addHandle(40);
-	$$('component1_slDiamCollet1').addHandle(800);	
-	$$('component1_slDiamCollet2').addHandle(800);	
-	$$('component1_slExt').addHandle(800);	
-	$$('component1_slInt').addHandle(800);	
+	$$('component1_slDiamCollet1').addHandle(8000);	
+	$$('component1_slDiamCollet2').addHandle(8000);	
+	$$('component1_slExt').addHandle(8000);	
+	$$('component1_slInt').addHandle(8000);	
 	$$('component1_slL2').addHandle(400);	
 	$$('component1_slL3').addHandle(400);	
 	$$('component1_slEp').addHandle(2000);	
@@ -180,26 +180,26 @@ function constructor (id) {
 
 	slInt.slidechange = function slInt_slidechange (event)// @startlock
 	{// @endlock
-		$$('component1_stgInt').setValue(event.data.values[0]); 
-		$$('component1_stdInt').setValue(event.data.values[1]);
+		$$('component1_stgInt').setValue(event.data.values[0]/10); 
+		$$('component1_stdInt').setValue(event.data.values[1]/10);
 	};// @lock
 
 	slInt.slide = function slInt_slide (event)// @startlock
 	{// @endlock
-		$$('component1_stgInt').setValue(event.data.values[0]); 
-		$$('component1_stdInt').setValue(event.data.values[1]);
+		$$('component1_stgInt').setValue(event.data.values[0]/10); 
+		$$('component1_stdInt').setValue(event.data.values[1]/10);
 	};// @lock
 
 	slExt.slidechange = function slExt_slidechange (event)// @startlock
 	{// @endlock
-		$$('component1_stgExt').setValue(event.data.values[0]); 
-		$$('component1_stdExt').setValue(event.data.values[1]);
+		$$('component1_stgExt').setValue(event.data.values[0]/10); 
+		$$('component1_stdExt').setValue(event.data.values[1]/10);
 	};// @lock
 
 	slExt.slide = function slExt_slide (event)// @startlock
 	{// @endlock
-		$$('component1_stgExt').setValue(event.data.values[0]); 
-		$$('component1_stdExt').setValue(event.data.values[1]);
+		$$('component1_stgExt').setValue(event.data.values[0]/10); 
+		$$('component1_stdExt').setValue(event.data.values[1]/10);
 	};// @lock
 
 	cbxL3.click = function cbxL3_click (event)// @startlock
@@ -236,7 +236,7 @@ function constructor (id) {
 			$$('component1_slInt').show();
 			$$('component1_stgInt').show();
 			$$('component1_stdInt').show();
-			$$('component1_slInt').setValues([5,20]);
+			$$('component1_slInt').setValues([50,200]);
 		} else {
 			$$('component1_slInt').hide();
 			$$('component1_stgInt').hide();
@@ -250,7 +250,7 @@ function constructor (id) {
 			$$('component1_slExt').show();
 			$$('component1_stgExt').show();
 			$$('component1_stdExt').show();
-			$$('component1_slExt').setValues([10,30]);
+			$$('component1_slExt').setValues([100,300]);
 		} else {
 			$$('component1_slExt').hide();
 			$$('component1_stgExt').hide();
@@ -260,26 +260,26 @@ function constructor (id) {
 
 	slDiamCollet2.slidechange = function slDiamCollet2_slidechange (event)// @startlock
 	{// @endlock
-		$$('component1_stgCol2').setValue(event.data.values[0]); 
-		$$('component1_stdCol2').setValue(event.data.values[1]);
+		$$('component1_stgCol2').setValue(event.data.values[0]/10); 
+		$$('component1_stdCol2').setValue(event.data.values[1]/10);
 	};// @lock
 
 	slDiamCollet2.slide = function slDiamCollet2_slide (event)// @startlock
 	{// @endlock
-		$$('component1_stgCol2').setValue(event.data.values[0]); 
-		$$('component1_stdCol2').setValue(event.data.values[1]);
+		$$('component1_stgCol2').setValue(event.data.values[0]/10); 
+		$$('component1_stdCol2').setValue(event.data.values[1]/10);
 	};// @lock
 
 	slDiamCollet1.slidechange = function slDiamCollet1_slidechange (event)// @startlock
 	{// @endlock
-		$$('component1_stgCol1').setValue(event.data.values[0]); 
-		$$('component1_stdCol1').setValue(event.data.values[1]);
+		$$('component1_stgCol1').setValue(event.data.values[0]/10); 
+		$$('component1_stdCol1').setValue(event.data.values[1]/10);
 	};// @lock
 
 	slDiamCollet1.slide = function slDiamCollet1_slide (event)// @startlock
 	{// @endlock
-		$$('component1_stgCol1').setValue(event.data.values[0]); 
-		$$('component1_stdCol1').setValue(event.data.values[1]);
+		$$('component1_stgCol1').setValue(event.data.values[0]/10); 
+		$$('component1_stdCol1').setValue(event.data.values[1]/10);
 	};// @lock
 
 	cbxDiamCollet2.click = function cbxDiamCollet2_click (event)// @startlock
@@ -288,7 +288,7 @@ function constructor (id) {
 			$$('component1_slDiamCollet2').show();
 			$$('component1_stgCol2').show();
 			$$('component1_stdCol2').show();
-			$$('component1_slDiamCollet2').setValues([10,30]);
+			$$('component1_slDiamCollet2').setValues([100,300]);
 		} else {
 			$$('component1_slDiamCollet2').hide();
 			$$('component1_stgCol2').hide();
@@ -302,7 +302,7 @@ function constructor (id) {
 			$$('component1_slDiamCollet1').show();
 			$$('component1_stgCol1').show();
 			$$('component1_stdCol1').show();
-			$$('component1_slDiamCollet1').setValues([10,30]);
+			$$('component1_slDiamCollet1').setValues([100,300]);
 		} else {
 			$$('component1_slDiamCollet1').hide();
 			$$('component1_stgCol1').hide();

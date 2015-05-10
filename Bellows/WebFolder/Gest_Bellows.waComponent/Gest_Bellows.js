@@ -356,13 +356,13 @@ function constructor (id) {
 	fCode.keyup = function fCode_keyup (event)// @startlock
 	{// @endlock
 		$$('component1_fRef').setValue(null);
-		WAF.sources.component1_soufflet.query("Code = :1", event.currentTarget.value + "*");
+		WAF.sources.component1_soufflets.query("Code = :1", event.currentTarget.value + "*");
 	};// @lock
 
 	fRef.keyup = function fRef_keyup (event)// @startlock
 	{// @endlock
 		$$('component1_fCode').setValue(null);
-		WAF.sources.component1_soufflet.query("Reference = :1", event.currentTarget.value + "*");
+		WAF.sources.component1_soufflets.query("Reference = :1", event.currentTarget.value + "*");
 	};// @lock
 
 	// @region eventManager// @startlock
