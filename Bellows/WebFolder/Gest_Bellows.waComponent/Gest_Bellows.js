@@ -17,6 +17,8 @@ function constructor (id) {
 	$$("component1_ListBell").setRowHeight(22);
 
 	// @region namespaceDeclaration// @startlock
+	var cDiaCol1 = {};	// @textField
+	var cbCollet1 = {};	// @combobox
 	var btnMat = {};	// @buttonImage
 	var btnOut = {};	// @buttonImage
 	var cNbParois = {};	// @textField
@@ -32,6 +34,20 @@ function constructor (id) {
 	// @endregion// @endlock
 
 	// eventHandlers// @lock
+
+	cDiaCol1.change = function cDiaCol1_change (event)// @startlock
+	{// @endlock
+		if ($$('component1_cAction').getValue() ===  "Créer") {
+			$$('component1_cDiaCol2').setValue($$('component1_cDiaCol1').getValue());
+		}
+	};// @lock
+
+	cbCollet1.change = function cbCollet1_change (event)// @startlock
+	{// @endlock
+		if ($$('component1_cAction').getValue() ===  "Créer") {
+			$$('component1_cbCollet2').setValue($$('component1_cbCollet1').getValue());
+		}
+	};// @lock
 
 	btnMat.click = function btnMat_click (event)// @startlock
 	{// @endlock
@@ -311,6 +327,7 @@ function constructor (id) {
 		$$('component1_cMatNom').hide();
 		$$('component1_cbMat').show();
 		$$('component1_cNbParois').setReadOnly(false);
+		$$('component1_cNbParois').setValue(1);
 		$$('component1_cEpParois').setReadOnly(false);
 		$$('component1_cNbOndes').setReadOnly(false);
 		$$('component1_cCollet1').hide();
@@ -367,6 +384,8 @@ function constructor (id) {
 	};// @lock
 
 	// @region eventManager// @startlock
+	WAF.addListener(this.id + "_cDiaCol1", "change", cDiaCol1.change, "WAF");
+	WAF.addListener(this.id + "_cbCollet1", "change", cbCollet1.change, "WAF");
 	WAF.addListener(this.id + "_btnMat", "click", btnMat.click, "WAF");
 	WAF.addListener(this.id + "_btnOut", "click", btnOut.click, "WAF");
 	WAF.addListener(this.id + "_cNbParois", "change", cNbParois.change, "WAF");
