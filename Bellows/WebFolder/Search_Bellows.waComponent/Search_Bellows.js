@@ -476,9 +476,9 @@ function constructor (id) {
 			p2C2 = "*";
 			if ($$('component1_cbbCollet2').getValue() !== "-") {
 				p2C2 = $$('component1_cbbCollet2').getValue();
-				LQuery = LQuery + "and ( Collet1 = '" + p1C2 + "'  or Collet1 = '" + p2C2 + "' ) ";
+				LQuery = LQuery + "and ( Collet2 = '" + p1C2 + "'  or Collet2 = '" + p2C2 + "' ) ";
 			} else {
-				LQuery = LQuery + "and Collet1 = '" + p1C2 + "' ";
+				LQuery = LQuery + "and Collet2 = '" + p1C2 + "' ";
 			}
 		}
 		
