@@ -4,9 +4,9 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @region namespaceDeclaration// @startlock
 	var btCompare = {};	// @buttonImage
 	var btPV = {};	// @buttonImage
-	var btB = {};	// @buttonImage
+	var btMethod = {};	// @buttonImage
 	var btC = {};	// @buttonImage
-	var btD = {};	// @buttonImage
+	var btClients = {};	// @buttonImage
 	var btUser = {};	// @buttonImage
 	var btBellows = {};	// @buttonImage
 	var btTools = {};	// @buttonImage
@@ -31,7 +31,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	btCompare.mouseover = function btCompare_mouseover (event)// @startlock
 	{// @endlock
-		$$("cHelp").setValue("[COMPARER]  Effectuer plusieurs recherches multi-critères dans la base des soufflets et stocker les résultats pour pouvoir les comparer. ");
+		var vRet = String.fromCharCode(13) + String.fromCharCode(13);
+		$$("cHelp").setValue("[COMPARER]" + vRet + "Effectuer plusieurs recherches multi-critères dans la base des soufflets et stocker les résultats pour pouvoir les comparer. ");
 		$$("cHelp").show();
 	};// @lock
 
@@ -42,7 +43,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	btPV.mouseover = function btPV_mouseover (event)// @startlock
 	{// @endlock
-		$$("cHelp").setValue("[PV PRODUCTION]  Créer et modifier des PV de production.");
+		var vRet = String.fromCharCode(13) + String.fromCharCode(13);
+		$$("cHelp").setValue("[PV PRODUCTION]" + vRet + "Créer et modifier des PV de production.");
 		$$("cHelp").show();
 	};// @lock
 
@@ -51,13 +53,13 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		$$("cHelp").hide();
 	};// @lock
 
-	btB.mouseover = function btB_mouseover (event)// @startlock
+	btMethod.mouseover = function btMethod_mouseover (event)// @startlock
 	{// @endlock
 		$$("cHelp").setValue("");
 		$$("cHelp").show();
 	};// @lock
 
-	btB.mouseout = function btB_mouseout (event)// @startlock
+	btMethod.mouseout = function btMethod_mouseout (event)// @startlock
 	{// @endlock
 		$$("cHelp").hide();
 	};// @lock
@@ -73,13 +75,21 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		$$("cHelp").hide();
 	};// @lock
 
-	btD.mouseover = function btD_mouseover (event)// @startlock
+	btClients.click = function btClients_click (event)// @startlock
 	{// @endlock
-		$$("cHelp").setValue("");
+		$$("cchg").show();
+		$$("cHelp").hide();
+		$$('component1').loadComponent("/Gest_Clients.waComponent");
+	};// @lock
+
+	btClients.mouseover = function btClients_mouseover (event)// @startlock
+	{// @endlock
+		var vRet = String.fromCharCode(13) + String.fromCharCode(13);
+		$$("cHelp").setValue("[CLIENTS]" + vRet + "Gérer le référentiel simplifié des clients. Créer un nouveau client. Modifier un client. Désactiver un client.");
 		$$("cHelp").show();
 	};// @lock
 
-	btD.mouseout = function btD_mouseout (event)// @startlock
+	btClients.mouseout = function btClients_mouseout (event)// @startlock
 	{// @endlock
 		$$("cHelp").hide();
 	};// @lock
@@ -87,12 +97,14 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	btUser.click = function btUser_click (event)// @startlock
 	{// @endlock
 		$$("cchg").show();
+		$$("cHelp").hide();
 		$$('component1').loadComponent("/Gest_Utilisateurs.waComponent");
 	};// @lock
 
 	btUser.mouseover = function btUser_mouseover (event)// @startlock
 	{// @endlock
-		$$("cHelp").setValue("[UTILISATEURS]  Gérer les utilisateurs pouvant se connecter à l'application. Créer un utilisateur. Indiquer une date de sortie d'un utilisateur.");
+		var vRet = String.fromCharCode(13) + String.fromCharCode(13);
+		$$("cHelp").setValue("[UTILISATEURS]" + vRet + "Gérer les utilisateurs pouvant se connecter à l'application. Créer un utilisateur. Indiquer une date de sortie d'un utilisateur.");
 		$$("cHelp").show();
 	};// @lock
 
@@ -110,7 +122,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	btBellows.mouseover = function btBellows_mouseover (event)// @startlock
 	{// @endlock
-		$$("cHelp").setValue("[SOUFFLETS]   Gérer le référentiel des soufflets. Créer un nouveau soufllet. Modifier ses propriétés. Désactiver un soufflet.");
+		var vRet = String.fromCharCode(13) + String.fromCharCode(13);
+		$$("cHelp").setValue("[SOUFFLETS]" + vRet + "Gérer le référentiel des soufflets. Créer un nouveau soufllet. Modifier ses propriétés. Désactiver un soufflet.");
 		$$("cHelp").show();
 	};// @lock
 
@@ -128,7 +141,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	btTools.mouseover = function btTools_mouseover (event)// @startlock
 	{// @endlock
-		$$("cHelp").setValue("[OUTILS]  Gérer les références et propriétés des outils. Créer un nouvel outil. Modifier un Outil. Désactiver un outil.");
+		var vRet = String.fromCharCode(13) + String.fromCharCode(13);
+		$$("cHelp").setValue("[OUTILS]" + vRet + "Gérer les références et propriétés des outils. Créer un nouvel outil. Modifier un Outil. Désactiver un outil.");
 		$$("cHelp").show();
 	};// @lock
 
@@ -146,7 +160,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	btMat.mouseover = function btMat_mouseover (event)// @startlock
 	{// @endlock
-		$$("cHelp").setValue("[MATIERES]  Gérer les références des matières utilisables dans la base de données.");
+		var vRet = String.fromCharCode(13) + String.fromCharCode(13);
+		$$("cHelp").setValue("[MATIERES]" + vRet + "Gérer les références des matières utilisables dans la base de données.");
 		$$("cHelp").show();
 	};// @lock
 
@@ -164,7 +179,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	btTypMat.mouseover = function btTypMat_mouseover (event)// @startlock
 	{// @endlock
-		$$("cHelp").setValue("[TYPES MATIERE]  Gérer les types de matières utilisables dans la base de données.");
+		var vRet = String.fromCharCode(13) + String.fromCharCode(13);
+		$$("cHelp").setValue("[TYPES MATIERE]" + vRet + "Gérer les types de matières utilisables dans la base de données.");
 		$$("cHelp").show();
 	};// @lock
 
@@ -204,7 +220,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	btPswd.mouseover = function btPswd_mouseover (event)// @startlock
 	{// @endlock
-		$$("cHelp").setValue("[MOT DE PASSE]  Changer le mot de passe de son compte utilisateur.");
+		var vRet = String.fromCharCode(13) + String.fromCharCode(13);
+		$$("cHelp").setValue("[MOT DE PASSE]" + vRet + "Changer le mot de passe de son compte utilisateur.");
 		$$("cHelp").show();
 	};// @lock
 
@@ -222,7 +239,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	btSearch.mouseover = function btSearch_mouseover (event)// @startlock
 	{// @endlock
-		$$("cHelp").setValue("[RECHERCHER]  Rechercher un soufflet dans la base de données en utilisant des critères multiples de recherche. Exporter le résultat de la recherche dans un fichier Excel.");
+		var vRet = String.fromCharCode(13) + String.fromCharCode(13);
+		$$("cHelp").setValue("[RECHERCHER]" + vRet + "Rechercher un soufflet dans la base de données en utilisant des critères multiples de recherche. Exporter le résultat de la recherche dans un fichier Excel.");
 		$$("cHelp").show();
 	};// @lock
 
@@ -240,7 +258,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	btAbout.mouseover = function btAbout_mouseover (event)// @startlock
 	{// @endlock
-		$$("cHelp").setValue("[A PROPOS]  Page d'information sur l'application.");
+		var vRet = String.fromCharCode(13) + String.fromCharCode(13);
+		$$("cHelp").setValue("[A PROPOS]" + vRet + "Page d'information sur l'application.");
 		$$("cHelp").show();
 	};// @lock
 
@@ -262,7 +281,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 				$$('btPV').disable();
 				$$('btB').disable();
 				$$('btC').disable();
-				$$('btD').disable();
+				$$('btClients').disable();
 				$$('btUser').disable();
 				$$('btBellows').disable();
 				$$('btTools').disable();
@@ -278,7 +297,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 				$$('btPV').enable();
 				$$('btB').disable();
 				$$('btC').disable();
-				$$('btD').disable();
+				$$('btClients').disable();
 				$$('btUser').disable();
 				$$('btBellows').disable();
 				$$('btTools').disable();
@@ -313,6 +332,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("btClients", "click", btClients.click, "WAF");
 	WAF.addListener("btAbout", "click", btAbout.click, "WAF");
 	WAF.addListener("btTypMat", "click", btTypMat.click, "WAF");
 	WAF.addListener("btMat", "click", btMat.click, "WAF");
@@ -326,12 +346,12 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	WAF.addListener("btCompare", "mouseout", btCompare.mouseout, "WAF");
 	WAF.addListener("btPV", "mouseover", btPV.mouseover, "WAF");
 	WAF.addListener("btPV", "mouseout", btPV.mouseout, "WAF");
-	WAF.addListener("btB", "mouseover", btB.mouseover, "WAF");
-	WAF.addListener("btB", "mouseout", btB.mouseout, "WAF");
+	WAF.addListener("btMethod", "mouseover", btMethod.mouseover, "WAF");
+	WAF.addListener("btMethod", "mouseout", btMethod.mouseout, "WAF");
 	WAF.addListener("btC", "mouseover", btC.mouseover, "WAF");
 	WAF.addListener("btC", "mouseout", btC.mouseout, "WAF");
-	WAF.addListener("btD", "mouseover", btD.mouseover, "WAF");
-	WAF.addListener("btD", "mouseout", btD.mouseout, "WAF");
+	WAF.addListener("btClients", "mouseover", btClients.mouseover, "WAF");
+	WAF.addListener("btClients", "mouseout", btClients.mouseout, "WAF");
 	WAF.addListener("btUser", "mouseover", btUser.mouseover, "WAF");
 	WAF.addListener("btUser", "mouseout", btUser.mouseout, "WAF");
 	WAF.addListener("btBellows", "mouseover", btBellows.mouseover, "WAF");
