@@ -3,17 +3,21 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
 	var btCompare = {};	// @buttonImage
+	var btPV = {};	// @buttonImage
+	var btB = {};	// @buttonImage
+	var btC = {};	// @buttonImage
+	var btD = {};	// @buttonImage
+	var btUser = {};	// @buttonImage
+	var btBellows = {};	// @buttonImage
+	var btTools = {};	// @buttonImage
+	var btMat = {};	// @buttonImage
+	var btTypMat = {};	// @buttonImage
+	var imageButton4 = {};	// @buttonImage
+	var imageButton3 = {};	// @buttonImage
+	var btPswd = {};	// @buttonImage
 	var btSearch = {};	// @buttonImage
-	var menuItem10 = {};	// @menuItem
-	var menuItem9 = {};	// @menuItem
-	var menuItem6 = {};	// @menuItem
-	var menuItem7 = {};	// @menuItem
-	var menuItem2 = {};	// @menuItem
-	var menuItem8 = {};	// @menuItem
-	var menuItem1 = {};	// @menuItem
+	var btAbout = {};	// @buttonImage
 	var documentEvent = {};	// @document
-	var M_Apropos = {};	// @menuItem
-	var menuItem4 = {};	// @menuItem
 	var W_Login = {};	// @login
 // @endregion// @endlock
 
@@ -22,57 +26,227 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	btCompare.click = function btCompare_click (event)// @startlock
 	{// @endlock
 		$$("cchg").show();
-		$$("cQuick").hide();
 		$$('component1').loadComponent("/Compare_Bellows.waComponent");
+	};// @lock
+
+	btCompare.mouseover = function btCompare_mouseover (event)// @startlock
+	{// @endlock
+		$$("cHelp").setValue("[COMPARER]  Effectuer plusieurs recherches multi-critères dans la base des soufflets et stocker les résultats pour pouvoir les comparer. ");
+		$$("cHelp").show();
+	};// @lock
+
+	btCompare.mouseout = function btCompare_mouseout (event)// @startlock
+	{// @endlock
+		$$("cHelp").hide();
+	};// @lock
+
+	btPV.mouseover = function btPV_mouseover (event)// @startlock
+	{// @endlock
+		$$("cHelp").setValue("[PV PRODUCTION]  Créer et modifier des PV de production.");
+		$$("cHelp").show();
+	};// @lock
+
+	btPV.mouseout = function btPV_mouseout (event)// @startlock
+	{// @endlock
+		$$("cHelp").hide();
+	};// @lock
+
+	btB.mouseover = function btB_mouseover (event)// @startlock
+	{// @endlock
+		$$("cHelp").setValue("");
+		$$("cHelp").show();
+	};// @lock
+
+	btB.mouseout = function btB_mouseout (event)// @startlock
+	{// @endlock
+		$$("cHelp").hide();
+	};// @lock
+
+	btC.mouseover = function btC_mouseover (event)// @startlock
+	{// @endlock
+		$$("cHelp").setValue("");
+		$$("cHelp").show();
+	};// @lock
+
+	btC.mouseout = function btC_mouseout (event)// @startlock
+	{// @endlock
+		$$("cHelp").hide();
+	};// @lock
+
+	btD.mouseover = function btD_mouseover (event)// @startlock
+	{// @endlock
+		$$("cHelp").setValue("");
+		$$("cHelp").show();
+	};// @lock
+
+	btD.mouseout = function btD_mouseout (event)// @startlock
+	{// @endlock
+		$$("cHelp").hide();
+	};// @lock
+
+	btUser.click = function btUser_click (event)// @startlock
+	{// @endlock
+		$$("cchg").show();
+		$$('component1').loadComponent("/Gest_Utilisateurs.waComponent");
+	};// @lock
+
+	btUser.mouseover = function btUser_mouseover (event)// @startlock
+	{// @endlock
+		$$("cHelp").setValue("[UTILISATEURS]  Gérer les utilisateurs pouvant se connecter à l'application. Créer un utilisateur. Indiquer une date de sortie d'un utilisateur.");
+		$$("cHelp").show();
+	};// @lock
+
+	btUser.mouseout = function btUser_mouseout (event)// @startlock
+	{// @endlock
+		$$("cHelp").hide();
+	};// @lock
+
+	btBellows.click = function btBellows_click (event)// @startlock
+	{// @endlock
+		$$("cchg").show();
+		$$("cHelp").hide();
+		$$('component1').loadComponent("/Gest_Bellows.waComponent");
+	};// @lock
+
+	btBellows.mouseover = function btBellows_mouseover (event)// @startlock
+	{// @endlock
+		$$("cHelp").setValue("[SOUFFLETS]   Gérer le référentiel des soufflets. Créer un nouveau soufllet. Modifier ses propriétés. Désactiver un soufflet.");
+		$$("cHelp").show();
+	};// @lock
+
+	btBellows.mouseout = function btBellows_mouseout (event)// @startlock
+	{// @endlock
+		$$("cHelp").hide();
+	};// @lock
+
+	btTools.click = function btTools_click (event)// @startlock
+	{// @endlock
+		$$("cchg").show();
+		$$("cHelp").hide();
+		$$('component1').loadComponent("/Gest_Outils.waComponent");
+	};// @lock
+
+	btTools.mouseover = function btTools_mouseover (event)// @startlock
+	{// @endlock
+		$$("cHelp").setValue("[OUTILS]  Gérer les références et propriétés des outils. Créer un nouvel outil. Modifier un Outil. Désactiver un outil.");
+		$$("cHelp").show();
+	};// @lock
+
+	btTools.mouseout = function btTools_mouseout (event)// @startlock
+	{// @endlock
+		$$("cHelp").hide();
+	};// @lock
+
+	btMat.click = function btMat_click (event)// @startlock
+	{// @endlock
+		$$("cchg").show();
+		$$("cHelp").hide();
+		$$('component1').loadComponent("/Gest_Matieres.waComponent");
+	};// @lock
+
+	btMat.mouseover = function btMat_mouseover (event)// @startlock
+	{// @endlock
+		$$("cHelp").setValue("[MATIERES]  Gérer les références des matières utilisables dans la base de données.");
+		$$("cHelp").show();
+	};// @lock
+
+	btMat.mouseout = function btMat_mouseout (event)// @startlock
+	{// @endlock
+		$$("cHelp").hide();
+	};// @lock
+
+	btTypMat.click = function btTypMat_click (event)// @startlock
+	{// @endlock
+		$$("cchg").show();
+		$$("cHelp").hide();
+		$$('component1').loadComponent("/GestMatieres.waComponent");
+	};// @lock
+
+	btTypMat.mouseover = function btTypMat_mouseover (event)// @startlock
+	{// @endlock
+		$$("cHelp").setValue("[TYPES MATIERE]  Gérer les types de matières utilisables dans la base de données.");
+		$$("cHelp").show();
+	};// @lock
+
+	btTypMat.mouseout = function btTypMat_mouseout (event)// @startlock
+	{// @endlock
+		$$("cHelp").hide();
+	};// @lock
+
+	imageButton4.mouseover = function imageButton4_mouseover (event)// @startlock
+	{// @endlock
+		$$("cHelp").setValue("");
+		$$("cHelp").show();
+	};// @lock
+
+	imageButton4.mouseout = function imageButton4_mouseout (event)// @startlock
+	{// @endlock
+		$$("cHelp").hide();
+	};// @lock
+
+	imageButton3.mouseover = function imageButton3_mouseover (event)// @startlock
+	{// @endlock
+		$$("cHelp").setValue("");
+		$$("cHelp").show();
+	};// @lock
+
+	imageButton3.mouseout = function imageButton3_mouseout (event)// @startlock
+	{// @endlock
+		$$("cHelp").hide();
+	};// @lock
+
+	btPswd.click = function btPswd_click (event)// @startlock
+	{// @endlock
+		$$("cchg").show();
+		$$("cHelp").hide();
+		$$('component1').loadComponent("/UpdPsw.waComponent");
+	};// @lock
+
+	btPswd.mouseover = function btPswd_mouseover (event)// @startlock
+	{// @endlock
+		$$("cHelp").setValue("[MOT DE PASSE]  Changer le mot de passe de son compte utilisateur.");
+		$$("cHelp").show();
+	};// @lock
+
+	btPswd.mouseout = function btPswd_mouseout (event)// @startlock
+	{// @endlock
+		$$("cHelp").hide();
 	};// @lock
 
 	btSearch.click = function btSearch_click (event)// @startlock
 	{// @endlock
 		$$("cchg").show();
-		$$("cQuick").hide();
+		$$("cHelp").hide();
 		$$('component1').loadComponent("/Search_Bellows.waComponent");
 	};// @lock
 
-	menuItem10.click = function menuItem10_click (event)// @startlock
+	btSearch.mouseover = function btSearch_mouseover (event)// @startlock
 	{// @endlock
-		$$("cchg").show();
-		$$('component1').loadComponent("/Compare_Bellows.waComponent");
+		$$("cHelp").setValue("[RECHERCHER]  Rechercher un soufflet dans la base de données en utilisant des critères multiples de recherche. Exporter le résultat de la recherche dans un fichier Excel.");
+		$$("cHelp").show();
 	};// @lock
 
-	menuItem9.click = function menuItem9_click (event)// @startlock
+	btSearch.mouseout = function btSearch_mouseout (event)// @startlock
 	{// @endlock
-		$$("cchg").show();
-		$$('component1').loadComponent("/Search_Bellows.waComponent");
+		$$("cHelp").hide();
 	};// @lock
 
-	menuItem6.click = function menuItem6_click (event)// @startlock
+	btAbout.click = function btAbout_click (event)// @startlock
 	{// @endlock
 		$$("cchg").show();
-		$$('component1').loadComponent("/Gest_Bellows.waComponent");
+		$$("cHelp").hide();
+		$$('component1').loadComponent("/Apropos.waComponent");
 	};// @lock
 
-	menuItem7.click = function menuItem7_click (event)// @startlock
+	btAbout.mouseover = function btAbout_mouseover (event)// @startlock
 	{// @endlock
-		$$("cchg").show();
-		$$('component1').loadComponent("/Gest_Outils.waComponent");
+		$$("cHelp").setValue("[A PROPOS]  Page d'information sur l'application.");
+		$$("cHelp").show();
 	};// @lock
 
-	menuItem2.click = function menuItem2_click (event)// @startlock
+	btAbout.mouseout = function btAbout_mouseout (event)// @startlock
 	{// @endlock
-		$$("cchg").show();
-		$$('component1').loadComponent("/GestMatieres.waComponent");
-	};// @lock
-
-	menuItem8.click = function menuItem8_click (event)// @startlock
-	{// @endlock
-		$$("cchg").show();
-		$$('component1').loadComponent("/Gest_Matieres.waComponent");
-	};// @lock
-
-	menuItem1.click = function menuItem1_click (event)// @startlock
-	{// @endlock
-		$$("cchg").show();
-		$$('component1').loadComponent("/UpdPsw.waComponent");
+		$$("cHelp").hide();
 	};// @lock
 
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
@@ -83,24 +257,38 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		 } else {
 		 	
 			if (waf.directory.currentUserBelongsTo("Ingénieur")) {
-				$$('M_Administration').hide();
+				$$('btSearch').enable();
+				$$('btCompare').enable();
+				$$('btPV').disable();
+				$$('btB').disable();
+				$$('btC').disable();
+				$$('btD').disable();
+				$$('btUser').disable();
+				$$('btBellows').disable();
+				$$('btTools').disable();
+				$$('btMat').disable();
+				$$('btTypMat').disable();
+				$$('btPswd').enable();
+				$$('btAbout').enable();
+			}
+			
+			if (waf.directory.currentUserBelongsTo("Opérateur")) {
+				$$('btSearch').enable();
+				$$('btCompare').enable();
+				$$('btPV').enable();
+				$$('btB').disable();
+				$$('btC').disable();
+				$$('btD').disable();
+				$$('btUser').disable();
+				$$('btBellows').disable();
+				$$('btTools').disable();
+				$$('btMat').disable();
+				$$('btTypMat').disable();
+				$$('btPswd').enable();
+				$$('btAbout').enable();
 			}
 			
 		 }
-
-	};// @lock
-
-	M_Apropos.click = function M_Apropos_click (event)// @startlock
-	{// @endlock
-		$$("cchg").show();
-		$$('component1').loadComponent("/Apropos.waComponent");
-
-	};// @lock
-
-	menuItem4.click = function menuItem4_click (event)// @startlock
-	{// @endlock
-		$$("cchg").show();
-		$$('component1').loadComponent("/Gest_Utilisateurs.waComponent");
 
 	};// @lock
 
@@ -125,18 +313,46 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("btAbout", "click", btAbout.click, "WAF");
+	WAF.addListener("btTypMat", "click", btTypMat.click, "WAF");
+	WAF.addListener("btMat", "click", btMat.click, "WAF");
+	WAF.addListener("btTools", "click", btTools.click, "WAF");
+	WAF.addListener("btBellows", "click", btBellows.click, "WAF");
+	WAF.addListener("btUser", "click", btUser.click, "WAF");
+	WAF.addListener("btPswd", "click", btPswd.click, "WAF");
 	WAF.addListener("btCompare", "click", btCompare.click, "WAF");
 	WAF.addListener("btSearch", "click", btSearch.click, "WAF");
-	WAF.addListener("menuItem10", "click", menuItem10.click, "WAF");
-	WAF.addListener("menuItem9", "click", menuItem9.click, "WAF");
-	WAF.addListener("menuItem6", "click", menuItem6.click, "WAF");
-	WAF.addListener("menuItem7", "click", menuItem7.click, "WAF");
-	WAF.addListener("menuItem2", "click", menuItem2.click, "WAF");
-	WAF.addListener("menuItem8", "click", menuItem8.click, "WAF");
-	WAF.addListener("menuItem1", "click", menuItem1.click, "WAF");
+	WAF.addListener("btCompare", "mouseover", btCompare.mouseover, "WAF");
+	WAF.addListener("btCompare", "mouseout", btCompare.mouseout, "WAF");
+	WAF.addListener("btPV", "mouseover", btPV.mouseover, "WAF");
+	WAF.addListener("btPV", "mouseout", btPV.mouseout, "WAF");
+	WAF.addListener("btB", "mouseover", btB.mouseover, "WAF");
+	WAF.addListener("btB", "mouseout", btB.mouseout, "WAF");
+	WAF.addListener("btC", "mouseover", btC.mouseover, "WAF");
+	WAF.addListener("btC", "mouseout", btC.mouseout, "WAF");
+	WAF.addListener("btD", "mouseover", btD.mouseover, "WAF");
+	WAF.addListener("btD", "mouseout", btD.mouseout, "WAF");
+	WAF.addListener("btUser", "mouseover", btUser.mouseover, "WAF");
+	WAF.addListener("btUser", "mouseout", btUser.mouseout, "WAF");
+	WAF.addListener("btBellows", "mouseover", btBellows.mouseover, "WAF");
+	WAF.addListener("btBellows", "mouseout", btBellows.mouseout, "WAF");
+	WAF.addListener("btTools", "mouseover", btTools.mouseover, "WAF");
+	WAF.addListener("btTools", "mouseout", btTools.mouseout, "WAF");
+	WAF.addListener("btMat", "mouseover", btMat.mouseover, "WAF");
+	WAF.addListener("btMat", "mouseout", btMat.mouseout, "WAF");
+	WAF.addListener("btTypMat", "mouseover", btTypMat.mouseover, "WAF");
+	WAF.addListener("btTypMat", "mouseout", btTypMat.mouseout, "WAF");
+	WAF.addListener("imageButton4", "mouseover", imageButton4.mouseover, "WAF");
+	WAF.addListener("imageButton4", "mouseout", imageButton4.mouseout, "WAF");
+	WAF.addListener("imageButton3", "mouseover", imageButton3.mouseover, "WAF");
+	WAF.addListener("imageButton3", "mouseout", imageButton3.mouseout, "WAF");
+	WAF.addListener("btPswd", "mouseover", btPswd.mouseover, "WAF");
+	WAF.addListener("btPswd", "mouseout", btPswd.mouseout, "WAF");
+	WAF.addListener("btSearch", "mouseover", btSearch.mouseover, "WAF");
+	WAF.addListener("btSearch", "mouseout", btSearch.mouseout, "WAF");
+	WAF.addListener("btAbout", "mouseover", btAbout.mouseover, "WAF");
+	WAF.addListener("btAbout", "mouseout", btAbout.mouseout, "WAF");
 	WAF.addListener("document", "onLoad", documentEvent.onLoad, "WAF");
-	WAF.addListener("M_Apropos", "click", M_Apropos.click, "WAF");
-	WAF.addListener("menuItem4", "click", menuItem4.click, "WAF");
 	WAF.addListener("W_Login", "logout", W_Login.logout, "WAF");
 	WAF.addListener("W_Login", "login", W_Login.login, "WAF");
 // @endregion
