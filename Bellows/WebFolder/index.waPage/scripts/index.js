@@ -41,6 +41,13 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		$$("cHelp").hide();
 	};// @lock
 
+	btPV.click = function btPV_click (event)// @startlock
+	{// @endlock
+		$$("cchg").show();
+		$$("cHelp").hide();
+		$$('component1').loadComponent("/Gest_PV.waComponent");
+	};// @lock
+
 	btPV.mouseover = function btPV_mouseover (event)// @startlock
 	{// @endlock
 		var vRet = String.fromCharCode(13) + String.fromCharCode(13);
@@ -332,6 +339,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("btPV", "click", btPV.click, "WAF");
 	WAF.addListener("btClients", "click", btClients.click, "WAF");
 	WAF.addListener("btAbout", "click", btAbout.click, "WAF");
 	WAF.addListener("btTypMat", "click", btTypMat.click, "WAF");
