@@ -114,6 +114,7 @@ function constructor (id) {
 		$$('component1_cRaideur').hide();
 		$$('component1_LibCD').hide();
 		$$('component1_cbMoyenC').show();
+		$$('component1_mPiece').show();
 		$$('component1_LibMes').show();
 		$$('component1_mNbOndes').show();
 		$$('component1_mEpParois').show();
@@ -160,6 +161,7 @@ function constructor (id) {
 		$$('component1_cRaideur').hide();
 		$$('component1_LibCD').hide();
 		$$('component1_cbMoyenC').show();
+		$$('component1_mPiece').show();
 		$$('component1_LibMes').show();
 		$$('component1_mNbOndes').show();
 		$$('component1_mEpParois').show();
@@ -209,6 +211,7 @@ function constructor (id) {
 		$$('component1_cRaideur').show();
 		$$('component1_LibCD').show();
 		$$('component1_cbMoyenC').hide();
+		$$('component1_mPiece').hide();
 		$$('component1_LibMes').hide();
 		$$('component1_mNbOndes').hide();
 		$$('component1_mEpParois').hide();
