@@ -1,7 +1,9 @@
 ﻿<!DOCTYPE html><section data-group="[]">
     <meta name="generator" content="Wakanda GUIDesigner"/>
-    <meta name="WAF.catalog" content="Utilisateurs"/>
+    <meta name="WAF.catalog" content="Utilisateurs,UserParam"/>
     <meta name="WAF.config.datasources" data-type="dataSource" data-source-type="dataClass" data-source="Utilisateurs" data-scope="local" data-lib="WAF" data-initialOrderBy="Nom" data-id="{id}utilisateurs" data-dataType="string" data-autoLoad="true" content="utilisateurs"/>
+    
+    
     
     
     
@@ -37,9 +39,9 @@
 		<label id="{id}label4" for="{id}cPrenom" data-valign="middle" data-type="label" data-margin="5" data-lib="WAF" data-constraint-top="true" data-constraint-left="true" class="waf-widget waf-label waf-label-textfield">Prénom : </label>
 		<input type="text" id="{id}cNomPrenom" data-type="textField" data-readOnly="true" data-password="false" data-multiline="false" data-lib="WAF" data-label-position="left" data-label="Nom Complet : " data-datapicker-on="false" data-datapicker-icon-only="false" data-constraint-top="true" data-constraint-left="true" data-binding="{id}utilisateurs.Nom_Prenom" class="waf-widget waf-textField"/>
 		<label id="{id}label5" for="{id}cNomPrenom" data-valign="middle" data-type="label" data-margin="5" data-lib="WAF" data-constraint-top="true" data-constraint-left="true" class="waf-widget waf-label waf-label-textfield">Nom Complet : </label>
-		<input type="text" tabindex="6" id="{id}cDateEntree" data-type="textField" data-readOnly="true" data-password="false" data-multiline="false" data-lib="WAF" data-label-position="left" data-label="Date d'entrée : " data-datapicker-on="true" data-datapicker-icon-only="true" data-constraint-top="true" data-constraint-left="true" data-binding="{id}utilisateurs.Date_Entree" class="waf-widget waf-textField" data-format="dd/mm/yy"/>
+		<input type="text" tabindex="6" id="{id}cDateEntree" data-type="textField" data-readOnly="true" data-password="false" data-multiline="false" data-lib="WAF" data-label-position="left" data-label="Date d'entrée : " data-format="dd/mm/yy" data-datapicker-on="true" data-datapicker-icon-only="true" data-constraint-top="true" data-constraint-left="true" data-binding="{id}utilisateurs.Date_Entree" class="waf-widget waf-textField"/>
 		<label id="{id}label6" for="{id}cDateEntree" data-valign="middle" data-type="label" data-margin="5" data-lib="WAF" data-constraint-top="true" data-constraint-left="true" class="waf-widget waf-label waf-label-textfield">Date d'entrée : </label>
-		<input type="text" tabindex="7" id="{id}cDateSortie" data-type="textField" data-readOnly="true" data-password="false" data-multiline="false" data-lib="WAF" data-label-position="left" data-label="Date de sortie : " data-datapicker-on="true" data-datapicker-icon-only="true" data-constraint-top="true" data-constraint-left="true" data-binding="{id}utilisateurs.Date_Sortie" class="waf-widget waf-textField" data-format="dd/mm/yy"/>
+		<input type="text" tabindex="7" id="{id}cDateSortie" data-type="textField" data-readOnly="true" data-password="false" data-multiline="false" data-lib="WAF" data-label-position="left" data-label="Date de sortie : " data-format="dd/mm/yy" data-datapicker-on="true" data-datapicker-icon-only="true" data-constraint-top="true" data-constraint-left="true" data-binding="{id}utilisateurs.Date_Sortie" class="waf-widget waf-textField"/>
 		<label id="{id}label7" for="{id}cDateSortie" data-valign="middle" data-type="label" data-margin="5" data-lib="WAF" data-constraint-top="true" data-constraint-left="true" class="waf-widget waf-label waf-label-textfield">Date de sortie : </label>
 		<div id="{id}cFonction" data-type="combobox" data-limit="20" data-lib="WAF" data-label-position="left" data-label="Fonction : " data-hideonload="true" data-editable="true" data-constraint-top="true" data-constraint-left="true" data-binding-out="{id}{id}utilisateurs.Fonction" data-autoDispatch="true" class="waf-widget waf-combobox"><select><option value="Administrateur">Administrateur</option><option value="Ingénieur" selected="selected">Ingénieur</option></select></div>
 		<label id="{id}label8" for="{id}cFonction" data-valign="middle" data-type="label" data-margin="5" data-lib="WAF" data-constraint-top="true" data-constraint-left="true" class="waf-widget waf-label waf-label-combobox">Fonction : </label>

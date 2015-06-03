@@ -182,7 +182,7 @@ function constructor (id) {
 		var UFonction, CAction, CNomComplet, CIDuser, Prenom, Nom, newEleve, newUser, myUser, Clogin;
 		
 		UFonction = $$('component1_cFonction').getValue();
-		CAction = $$('component1_cAction').getValue();
+		CAction = $$('component1_xAction').getValue();
 		Clogin = $$('component1_cLogin').getValue();
 				
 		$$('component1_bUpdate').show();
@@ -205,8 +205,7 @@ function constructor (id) {
 		$$('component1_cDateEntree').getLabel().setTextColor("black");
 		$$('component1_cPswd').getLabel().setTextColor("black");
 		$$('component1_cLogin').getLabel().setTextColor("black");
-		$$('component1_xAction').setValue("-");
-		
+				
 		sources.component1_utilisateurs.save();
 				
 	};// @lock

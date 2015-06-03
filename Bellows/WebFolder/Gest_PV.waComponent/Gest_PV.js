@@ -20,6 +20,7 @@ function constructor (id) {
 	var vUser;
 	
 	vUser = WAF.directory.currentUser().userName;
+	sources.component1_userParam.query("Utilisateur.Login = :1", vUser);
 	sources.component1_utilisateurs.query("Login = :1", { onSuccess: function(event) { 
 			var vRole;
 			elem = sources.component1_utilisateurs;
@@ -36,6 +37,12 @@ function constructor (id) {
 	}, params:[vUser] });
 	
 	// @region namespaceDeclaration// @startlock
+	var scbxDate = {};	// @checkbox
+	var scbxSoufflet = {};	// @checkbox
+	var scbxClient = {};	// @checkbox
+	var btShow = {};	// @buttonImage
+	var btReset = {};	// @buttonImage
+	var btSearch = {};	// @buttonImage
 	var ListMesure = {};	// @dataGrid
 	var btSupMes = {};	// @buttonImage
 	var btNewMes = {};	// @buttonImage
@@ -55,6 +62,152 @@ function constructor (id) {
 	// @endregion// @endlock
 
 	// eventHandlers// @lock
+
+	scbxDate.click = function scbxDate_click (event)// @startlock
+	{// @endlock
+		var vNow, vToday;
+		
+		if ($$('component1_scbxDate').getValue()) {
+			$$('component1_scDDeb').show();
+			$$('component1_scDFin').show();
+			vNow = new Date();
+			vToday = vNow.getDate() + '/' + (vNow.getMonth()+1) + '/' +  vNow.getFullYear();
+			$$('component1_scDDeb').setValue(vToday);
+			$$('component1_scDFin').setValue(vToday);
+		} else {
+			$$('component1_scDDeb').hide();
+			$$('component1_scDFin').hide();
+		}
+	};// @lock
+
+	scbxSoufflet.click = function scbxSoufflet_click (event)// @startlock
+	{// @endlock
+		if ($$('component1_scbxSoufflet').getValue()) {
+			$$('component1_scbSoufflet').show();
+			sources.component1_soufflets1.query("ID > 0 order by Reference");
+		} else {
+			$$('component1_scbSoufflet').hide();
+		}
+	};// @lock
+
+	scbxClient.click = function scbxClient_click (event)// @startlock
+	{// @endlock
+		if ($$('component1_scbxClient').getValue()) {
+			$$('component1_scbClient').show();
+			sources.component1_clients1.query("ID > 0 order by Reference");
+		} else {
+			$$('component1_scbClient').hide();
+		}
+	};// @lock
+
+	btShow.click = function btShow_click (event)// @startlock
+	{// @endlock
+		$$('component1_btSup').hide();
+		$$('component1_btShow').hide();
+		$$('component1_bNew').hide();
+		$$('component1_bUpdate').hide();
+		$$('component1_ListPV').disable();
+		$$('component1_PanelSearch').show();
+		
+	};// @lock
+
+	btReset.click = function btReset_click (event)// @startlock
+	{// @endlock
+		$$('component1_scbClient').hide();
+		$$('component1_scbSoufflet').hide();
+		$$('component1_scDDeb').hide();
+		$$('component1_scDFin').hide();
+		$$('component1_scLanc').setValue(null);
+		$$('component1_scCom').setValue(null);
+		$$('component1_scbxClient').uncheck();
+		$$('component1_scbxSoufflet').uncheck();
+		$$('component1_scbxDate').uncheck();
+		
+	};// @lock
+
+	btSearch.click = function btSearch_click (event)// @startlock
+	{// @endlock
+		var LQuery, pRef, pCode, pMat, pOutil, pForm, p1C1, p2C1, p1C2, p2C2, pParm, pParM, vUser, vDeb, vFin, elem;
+		
+		$$('component1_bNew').show();
+		$$('component1_btShow').show();
+		$$('component1_ListPV').enable();
+		$$('component1_ListPV').setReadOnly(true);
+		$$('component1_PanelSearch').hide();
+		
+		
+		
+		if ($$('component1_scLanc').getValue().length === 0) {
+			LQuery = "Num_Lancement = '*' ";
+		} else {
+			LQuery = "Num_Lancement = '*" + $$('component1_scLanc').getValue() + "*' ";
+		}
+			
+		if ($$('component1_scCom').getValue().length === 0) {
+			pCode = "*";
+		} else {
+			LQuery = LQuery + "and Num_Commande = '*" + $$('component1_scCom').getValue() + "*' ";
+		}
+		
+		pMat = "*";
+		if ($$('component1_scbxClient').getValue()) {
+			pMat = $$('component1_scbClient').getValue();
+			LQuery = LQuery + "and Client.ID = " + pMat + " ";
+		}
+		
+		pOutil = "*";
+		if ($$('component1_scbxSoufflet').getValue()) {
+			pOutil = $$('component1_scbSoufflet').getValue();
+			LQuery = LQuery + "and Soufflet.ID = " + pOutil + " ";
+		}
+		
+		pParm = 0;
+		pParM = 0;
+		if ($$('component1_scbxDate').getValue()) {
+			pParm = $$('component1_scDDeb').getValue();
+			split_date = pParm.split('/');
+			vDeb = new Date(split_date[2], split_date[1]*1 - 1, split_date[0]*1);
+			pParM = $$('component1_scDFin').getValue();
+			split_date = pParM.split('/');
+			vFin = new Date(split_date[2], split_date[1]*1 - 1, split_date[0]*1);
+			//alert("Min "+ pParm + "  Max "+pParM);
+			LQuery = LQuery + "and ( Date_Creation >= :1 and Date_Creation <= :2 ) ";
+			elem = sources.component1_userParam;
+    		if (elem.length > 0) {
+    			sources.component1_userParam.save();
+    		}
+    		
+		}
+		
+		//alert(LQuery);
+		
+		vUser = WAF.directory.currentUser().userName;
+		//alert(vUser);
+		sources.component1_utilisateurs.query("Login = :1", { onSuccess: function(event) { 
+			var vUser;
+			vUser = WAF.directory.currentUser().userName;
+    		sources.component1_userParam.query("Utilisateur.Login = :1", { onSuccess: function(event) { 
+    			elem = sources.component1_userParam;
+    			if (elem.length === 0) {
+     				sources.component1_userParam.addNewElement();
+     				sources.component1_utilisateurs.query("Login = :1", { onSuccess: function(event) { 
+      					sources.component1_userParam.Utilisateur.set(sources.component1_utilisateurs);
+      					sources.component1_userParam.StQuery = LQuery;
+      		      		sources.component1_userParam.save();
+     				}, params:[vUser] });
+    			} else {
+     				sources.component1_userParam.StQuery = LQuery;
+     				sources.component1_userParam.save();
+    			}
+    		}, params:[vUser] });
+    		
+    	}, params:[vUser] });
+		
+		WAF.sources.component1_pVProduction.query(LQuery, vDeb, vFin);
+		
+		
+		
+	};// @lock
 
 	ListMesure.onRowClick = function ListMesure_onRowClick (event)// @startlock
 	{// @endlock
@@ -355,6 +508,7 @@ function constructor (id) {
 		$$('component1_bSave').hide();
 		$$('component1_bUndo').hide();
 		$$('component1_bNew').show();
+		$$('component1_btShow').show();
 		$$('component1_btnClient').hide();
 		$$('component1_btnBellow').hide();
 		$$('component1_btSup').hide();
@@ -425,6 +579,7 @@ function constructor (id) {
 		$$('component1_bSave').show();
 		$$('component1_bUndo').show();
 		$$('component1_bNew').hide();
+		$$('component1_btShow').hide();
 		$$('component1_btnClient').show();
 		$$('component1_btnBellow').show();
 		$$('component1_btSup').hide();
@@ -494,6 +649,7 @@ function constructor (id) {
 		$$('component1_bSave').disable();
 		$$('component1_bUndo').show();
 		$$('component1_bNew').hide();
+		$$('component1_btShow').hide();
 		$$('component1_btnClient').hide();
 		$$('component1_btnBellow').hide();
 		$$('component1_btSup').hide();
@@ -553,6 +709,12 @@ function constructor (id) {
 	};// @lock
 
 	// @region eventManager// @startlock
+	WAF.addListener(this.id + "_scbxDate", "click", scbxDate.click, "WAF");
+	WAF.addListener(this.id + "_scbxSoufflet", "click", scbxSoufflet.click, "WAF");
+	WAF.addListener(this.id + "_scbxClient", "click", scbxClient.click, "WAF");
+	WAF.addListener(this.id + "_btShow", "click", btShow.click, "WAF");
+	WAF.addListener(this.id + "_btReset", "click", btReset.click, "WAF");
+	WAF.addListener(this.id + "_btSearch", "click", btSearch.click, "WAF");
 	WAF.addListener(this.id + "_ListMesure", "onRowClick", ListMesure.onRowClick, "WAF");
 	WAF.addListener(this.id + "_btSupMes", "click", btSupMes.click, "WAF");
 	WAF.addListener(this.id + "_btNewMes", "click", btNewMes.click, "WAF");
