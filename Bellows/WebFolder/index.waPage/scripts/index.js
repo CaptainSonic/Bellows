@@ -71,9 +71,17 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		$$("cHelp").hide();
 	};// @lock
 
+	btC.click = function btC_click (event)// @startlock
+	{// @endlock
+		$$("cchg").show();
+		$$("cHelp").hide();
+		$$('component1').loadComponent("/Analyses.waComponent");
+	};// @lock
+
 	btC.mouseover = function btC_mouseover (event)// @startlock
 	{// @endlock
-		$$("cHelp").setValue("");
+		var vRet = String.fromCharCode(13) + String.fromCharCode(13);
+		$$("cHelp").setValue("[ANALYSES]" + vRet + "Analyser les mesures des PV de production par rapport aux tolérances.");
 		$$("cHelp").show();
 	};// @lock
 
@@ -339,6 +347,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("btC", "click", btC.click, "WAF");
 	WAF.addListener("btPV", "click", btPV.click, "WAF");
 	WAF.addListener("btClients", "click", btClients.click, "WAF");
 	WAF.addListener("btAbout", "click", btAbout.click, "WAF");
