@@ -2,11 +2,11 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var btClients = {};	// @buttonImage
 	var btCompare = {};	// @buttonImage
 	var btPV = {};	// @buttonImage
 	var btMethod = {};	// @buttonImage
 	var btC = {};	// @buttonImage
-	var btClients = {};	// @buttonImage
 	var btUser = {};	// @buttonImage
 	var btBellows = {};	// @buttonImage
 	var btTools = {};	// @buttonImage
@@ -22,6 +22,18 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion// @endlock
 
 // eventHandlers// @lock
+
+	btClients.mouseover = function btClients_mouseover (event)// @startlock
+	{// @endlock
+		var vRet = String.fromCharCode(13) + String.fromCharCode(13);
+		$$("cHelp").setValue("[CALCULER]" + vRet + "Fonction non disponible pour l'instant. ");
+		$$("cHelp").show();
+	};// @lock
+
+	btClients.mouseout = function btClients_mouseout (event)// @startlock
+	{// @endlock
+		$$("cHelp").hide();
+	};// @lock
 
 	btCompare.click = function btCompare_click (event)// @startlock
 	{// @endlock
@@ -51,7 +63,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	btPV.mouseover = function btPV_mouseover (event)// @startlock
 	{// @endlock
 		var vRet = String.fromCharCode(13) + String.fromCharCode(13);
-		$$("cHelp").setValue("[PV PRODUCTION]" + vRet + "Créer et modifier des PV de production.");
+		$$("cHelp").setValue("[PV PRODUCTION]" + vRet + "Créer et modifier des PV de production pour un administrateur.");
 		$$("cHelp").show();
 	};// @lock
 
@@ -60,9 +72,17 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		$$("cHelp").hide();
 	};// @lock
 
+	btMethod.click = function btMethod_click (event)// @startlock
+	{// @endlock
+		$$("cchg").show();
+		$$("cHelp").hide();
+		$$('component1').loadComponent("/CreatePV.waComponent");
+	};// @lock
+
 	btMethod.mouseover = function btMethod_mouseover (event)// @startlock
 	{// @endlock
-		$$("cHelp").setValue("");
+		var vRet = String.fromCharCode(13) + String.fromCharCode(13);
+		$$("cHelp").setValue("[PV PRODUCTION]" + vRet + "Créer un nouveau PV de production pour un opérateur.");
 		$$("cHelp").show();
 	};// @lock
 
@@ -86,25 +106,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};// @lock
 
 	btC.mouseout = function btC_mouseout (event)// @startlock
-	{// @endlock
-		$$("cHelp").hide();
-	};// @lock
-
-	btClients.click = function btClients_click (event)// @startlock
-	{// @endlock
-		$$("cchg").show();
-		$$("cHelp").hide();
-		$$('component1').loadComponent("/Gest_Clients.waComponent");
-	};// @lock
-
-	btClients.mouseover = function btClients_mouseover (event)// @startlock
-	{// @endlock
-		var vRet = String.fromCharCode(13) + String.fromCharCode(13);
-		$$("cHelp").setValue("[CLIENTS]" + vRet + "Gérer le référentiel simplifié des clients. Créer un nouveau client. Modifier un client. Désactiver un client.");
-		$$("cHelp").show();
-	};// @lock
-
-	btClients.mouseout = function btClients_mouseout (event)// @startlock
 	{// @endlock
 		$$("cHelp").hide();
 	};// @lock
@@ -294,11 +295,11 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 				$$('btSearch').enable();
 				$$('btCompare').enable();
 				$$('btPV').disable();
-				$$('btB').disable();
+				$$('btMethod').enable();
 				$$('btC').disable();
 				$$('btClients').disable();
 				$$('btUser').disable();
-				$$('btBellows').disable();
+				$$('btBellows').enable();
 				$$('btTools').disable();
 				$$('btMat').disable();
 				$$('btTypMat').disable();
@@ -309,8 +310,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			if (waf.directory.currentUserBelongsTo("Opérateur")) {
 				$$('btSearch').enable();
 				$$('btCompare').enable();
-				$$('btPV').enable();
-				$$('btB').disable();
+				$$('btPV').disable();
+				$$('btMethod').enable();
 				$$('btC').disable();
 				$$('btClients').disable();
 				$$('btUser').disable();
@@ -347,9 +348,11 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("btMethod", "click", btMethod.click, "WAF");
+	WAF.addListener("btClients", "mouseover", btClients.mouseover, "WAF");
+	WAF.addListener("btClients", "mouseout", btClients.mouseout, "WAF");
 	WAF.addListener("btC", "click", btC.click, "WAF");
 	WAF.addListener("btPV", "click", btPV.click, "WAF");
-	WAF.addListener("btClients", "click", btClients.click, "WAF");
 	WAF.addListener("btAbout", "click", btAbout.click, "WAF");
 	WAF.addListener("btTypMat", "click", btTypMat.click, "WAF");
 	WAF.addListener("btMat", "click", btMat.click, "WAF");
@@ -367,8 +370,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	WAF.addListener("btMethod", "mouseout", btMethod.mouseout, "WAF");
 	WAF.addListener("btC", "mouseover", btC.mouseover, "WAF");
 	WAF.addListener("btC", "mouseout", btC.mouseout, "WAF");
-	WAF.addListener("btClients", "mouseover", btClients.mouseover, "WAF");
-	WAF.addListener("btClients", "mouseout", btClients.mouseout, "WAF");
 	WAF.addListener("btUser", "mouseover", btUser.mouseover, "WAF");
 	WAF.addListener("btUser", "mouseout", btUser.mouseout, "WAF");
 	WAF.addListener("btBellows", "mouseover", btBellows.mouseover, "WAF");
