@@ -63,7 +63,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	btPV.mouseover = function btPV_mouseover (event)// @startlock
 	{// @endlock
 		var vRet = String.fromCharCode(13) + String.fromCharCode(13);
-		$$("cHelp").setValue("[PV PRODUCTION]" + vRet + "Créer et modifier des PV de production pour un administrateur.");
+		$$("cHelp").setValue("[PV PRODUCTION]" + vRet + "Supprimer un PV de production pour un administrateur.");
 		$$("cHelp").show();
 	};// @lock
 
@@ -82,7 +82,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	btMethod.mouseover = function btMethod_mouseover (event)// @startlock
 	{// @endlock
 		var vRet = String.fromCharCode(13) + String.fromCharCode(13);
-		$$("cHelp").setValue("[PV PRODUCTION]" + vRet + "Créer un nouveau PV de production pour un opérateur.");
+		$$("cHelp").setValue("[PV PRODUCTION]" + vRet + "Créer et modifier un PV de production (Opérateur et Administrateur).");
 		$$("cHelp").show();
 	};// @lock
 
