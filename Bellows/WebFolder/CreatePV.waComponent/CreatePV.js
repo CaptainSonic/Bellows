@@ -44,6 +44,14 @@ function constructor (id) {
 	}, params:[vUser] });
 
 	// @region namespaceDeclaration// @startlock
+	var OutDc2 = {};	// @textField
+	var OutRaid = {};	// @textField
+	var OutLc2 = {};	// @textField
+	var OutLc1 = {};	// @textField
+	var OutDc1 = {};	// @textField
+	var OutL2 = {};	// @textField
+	var OutExt = {};	// @textField
+	var OutInt = {};	// @textField
 	var Raid5 = {};	// @textField
 	var Raid4 = {};	// @textField
 	var Raid3 = {};	// @textField
@@ -107,6 +115,150 @@ function constructor (id) {
 	// @endregion// @endlock
 
 	// eventHandlers// @lock
+
+	OutDc2.blur = function OutDc2_blur (event)// @startlock
+	{// @endlock
+		var vIntOnde, vExtOnde, vHautOnde;
+		
+		vIntOnde = event.currentTarget.value;
+		vIntOnde = vIntOnde.replace(",",".");
+		vExtOnde = $$('component1_ExtOnde').getValue();
+		vExtOnde = vExtOnde.replace(",",".");
+		vIntOnde = parseFloat(vIntOnde);
+		vExtOnde = parseFloat(vExtOnde);
+		if ((vIntOnde > 0) && (vExtOnde > 0)) {
+			vHautOnde = parseFloat((vExtOnde - vIntOnde)/2);
+			$$('component1_HautOnde').setValue(vHautOnde);
+		} else {
+			$$('component1_HautOnde').setValue("");
+		}
+	};// @lock
+
+	OutRaid.blur = function OutRaid_blur (event)// @startlock
+	{// @endlock
+		var vIntOnde, vExtOnde, vHautOnde;
+		
+		vIntOnde = event.currentTarget.value;
+		vIntOnde = vIntOnde.replace(",",".");
+		vExtOnde = $$('component1_ExtOnde').getValue();
+		vExtOnde = vExtOnde.replace(",",".");
+		vIntOnde = parseFloat(vIntOnde);
+		vExtOnde = parseFloat(vExtOnde);
+		if ((vIntOnde > 0) && (vExtOnde > 0)) {
+			vHautOnde = parseFloat((vExtOnde - vIntOnde)/2);
+			$$('component1_HautOnde').setValue(vHautOnde);
+		} else {
+			$$('component1_HautOnde').setValue("");
+		}
+	};// @lock
+
+	OutLc2.blur = function OutLc2_blur (event)// @startlock
+	{// @endlock
+		var vIntOnde, vExtOnde, vHautOnde;
+		
+		vIntOnde = event.currentTarget.value;
+		vIntOnde = vIntOnde.replace(",",".");
+		vExtOnde = $$('component1_ExtOnde').getValue();
+		vExtOnde = vExtOnde.replace(",",".");
+		vIntOnde = parseFloat(vIntOnde);
+		vExtOnde = parseFloat(vExtOnde);
+		if ((vIntOnde > 0) && (vExtOnde > 0)) {
+			vHautOnde = parseFloat((vExtOnde - vIntOnde)/2);
+			$$('component1_HautOnde').setValue(vHautOnde);
+		} else {
+			$$('component1_HautOnde').setValue("");
+		}
+	};// @lock
+
+	OutLc1.blur = function OutLc1_blur (event)// @startlock
+	{// @endlock
+		var vIntOnde, vExtOnde, vHautOnde;
+		
+		vIntOnde = event.currentTarget.value;
+		vIntOnde = vIntOnde.replace(",",".");
+		vExtOnde = $$('component1_ExtOnde').getValue();
+		vExtOnde = vExtOnde.replace(",",".");
+		vIntOnde = parseFloat(vIntOnde);
+		vExtOnde = parseFloat(vExtOnde);
+		if ((vIntOnde > 0) && (vExtOnde > 0)) {
+			vHautOnde = parseFloat((vExtOnde - vIntOnde)/2);
+			$$('component1_HautOnde').setValue(vHautOnde);
+		} else {
+			$$('component1_HautOnde').setValue("");
+		}
+	};// @lock
+
+	OutDc1.blur = function OutDc1_blur (event)// @startlock
+	{// @endlock
+		var vIntOnde, vExtOnde, vHautOnde;
+		
+		vIntOnde = event.currentTarget.value;
+		vIntOnde = vIntOnde.replace(",",".");
+		vExtOnde = $$('component1_ExtOnde').getValue();
+		vExtOnde = vExtOnde.replace(",",".");
+		vIntOnde = parseFloat(vIntOnde);
+		vExtOnde = parseFloat(vExtOnde);
+		if ((vIntOnde > 0) && (vExtOnde > 0)) {
+			vHautOnde = parseFloat((vExtOnde - vIntOnde)/2);
+			$$('component1_HautOnde').setValue(vHautOnde);
+		} else {
+			$$('component1_HautOnde').setValue("");
+		}
+	};// @lock
+
+	OutL2.blur = function OutL2_blur (event)// @startlock
+	{// @endlock
+		var vIntOnde, vExtOnde, vHautOnde;
+		
+		vIntOnde = event.currentTarget.value;
+		vIntOnde = vIntOnde.replace(",",".");
+		vExtOnde = $$('component1_ExtOnde').getValue();
+		vExtOnde = vExtOnde.replace(",",".");
+		vIntOnde = parseFloat(vIntOnde);
+		vExtOnde = parseFloat(vExtOnde);
+		if ((vIntOnde > 0) && (vExtOnde > 0)) {
+			vHautOnde = parseFloat((vExtOnde - vIntOnde)/2);
+			$$('component1_HautOnde').setValue(vHautOnde);
+		} else {
+			$$('component1_HautOnde').setValue("");
+		}
+	};// @lock
+
+	OutExt.blur = function OutExt_blur (event)// @startlock
+	{// @endlock
+		var vIntOnde, vExtOnde, vHautOnde;
+		
+		vIntOnde = event.currentTarget.value;
+		vIntOnde = vIntOnde.replace(",",".");
+		vExtOnde = $$('component1_ExtOnde').getValue();
+		vExtOnde = vExtOnde.replace(",",".");
+		vIntOnde = parseFloat(vIntOnde);
+		vExtOnde = parseFloat(vExtOnde);
+		if ((vIntOnde > 0) && (vExtOnde > 0)) {
+			vHautOnde = parseFloat((vExtOnde - vIntOnde)/2);
+			$$('component1_HautOnde').setValue(vHautOnde);
+		} else {
+			$$('component1_HautOnde').setValue("");
+		}
+	};// @lock
+
+	OutInt.blur = function OutInt_blur (event)// @startlock
+	{// @endlock
+		var vIntOnde, vExtOnde, vHautOnde;
+		
+		vIntOnde = event.currentTarget.value;
+		vIntOnde = vIntOnde.replace(",",".");
+		vExtOnde = $$('component1_ExtOnde').getValue();
+		vExtOnde = vExtOnde.replace(",",".");
+		vIntOnde = parseFloat(vIntOnde);
+		vExtOnde = parseFloat(vExtOnde);
+		if ((vIntOnde > 0) && (vExtOnde > 0)) {
+			vHautOnde = parseFloat((vExtOnde - vIntOnde)/2);
+			$$('component1_HautOnde').setValue(vHautOnde);
+		} else {
+			$$('component1_HautOnde').setValue("");
+		}
+	};// @lock
 
 	Raid5.blur = function Raid5_blur (event)// @startlock
 	{// @endlock
@@ -870,6 +1022,14 @@ function constructor (id) {
 		$$('component1_Raideur').setReadOnly(false);
 		$$('component1_cbBellows').setReadOnly(false);
 		$$('component1_cNumLanc').setReadOnly(true);
+		$$('component1_OutInt').setReadOnly(false);
+		$$('component1_OutExt').setReadOnly(false);
+		$$('component1_OutL2').setReadOnly(false);
+		$$('component1_OutDc1').setReadOnly(false);
+		$$('component1_OutLc1').setReadOnly(false);
+		$$('component1_OutDc2').setReadOnly(false);
+		$$('component1_OutLc2').setReadOnly(false);
+		$$('component1_OutRaid').setReadOnly(false);
 		
 		for (var i = 1; i < 6; i++) {
 			v = "component1_mes"+i;
@@ -1027,6 +1187,21 @@ function constructor (id) {
 		$$('component1_Raideur').setReadOnly(false);
 		$$('component1_cbBellows').setReadOnly(false);
 		$$('component1_cNumLanc').setReadOnly(false);
+		$$('component1_OutInt').setReadOnly(false);
+		$$('component1_OutExt').setReadOnly(false);
+		$$('component1_OutL2').setReadOnly(false);
+		$$('component1_OutDc1').setReadOnly(false);
+		$$('component1_OutLc1').setReadOnly(false);
+		$$('component1_OutDc2').setReadOnly(false);
+		$$('component1_OutLc2').setReadOnly(false);
+		$$('component1_OutRaid').setReadOnly(false);
+		$$('component1_OutInt').setValue("Pied à coulisse");
+		$$('component1_OutExt').setValue("Pied à coulisse");
+		$$('component1_OutL2').setValue("Pied à coulisse");
+		$$('component1_OutDc1').setValue("Pied à coulisse");
+		$$('component1_OutLc1').setValue("Gauge de profondeur");
+		$$('component1_OutDc2').setValue("Pied à coulisse");
+		$$('component1_OutLc2').setValue("Gauge de profondeur");
 		
 		for (var i = 1; i < 6; i++) {
 			v = "component1_n"+i;
@@ -1147,6 +1322,14 @@ function constructor (id) {
 		$$('component1_MLongCol2').setReadOnly(true);
 		$$('component1_Raideur').setReadOnly(true);
 		$$('component1_cNumLanc').setReadOnly(true);
+		$$('component1_OutInt').setReadOnly(true);
+		$$('component1_OutExt').setReadOnly(true);
+		$$('component1_OutL2').setReadOnly(true);
+		$$('component1_OutDc1').setReadOnly(true);
+		$$('component1_OutLc1').setReadOnly(true);
+		$$('component1_OutDc2').setReadOnly(true);
+		$$('component1_OutLc2').setReadOnly(true);
+		$$('component1_OutRaid').setReadOnly(true);
 		$$('component1_bSave').hide();
 		$$('component1_btUndo').hide();
 		$$('component1_btUpd').hide();
@@ -1339,6 +1522,14 @@ function constructor (id) {
 	};// @lock
 
 	// @region eventManager// @startlock
+	WAF.addListener(this.id + "_OutDc2", "blur", OutDc2.blur, "WAF");
+	WAF.addListener(this.id + "_OutRaid", "blur", OutRaid.blur, "WAF");
+	WAF.addListener(this.id + "_OutLc2", "blur", OutLc2.blur, "WAF");
+	WAF.addListener(this.id + "_OutLc1", "blur", OutLc1.blur, "WAF");
+	WAF.addListener(this.id + "_OutDc1", "blur", OutDc1.blur, "WAF");
+	WAF.addListener(this.id + "_OutL2", "blur", OutL2.blur, "WAF");
+	WAF.addListener(this.id + "_OutExt", "blur", OutExt.blur, "WAF");
+	WAF.addListener(this.id + "_OutInt", "blur", OutInt.blur, "WAF");
 	WAF.addListener(this.id + "_Raid5", "blur", Raid5.blur, "WAF");
 	WAF.addListener(this.id + "_Raid4", "blur", Raid4.blur, "WAF");
 	WAF.addListener(this.id + "_Raid3", "blur", Raid3.blur, "WAF");
