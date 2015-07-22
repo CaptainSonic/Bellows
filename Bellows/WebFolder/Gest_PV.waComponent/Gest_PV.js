@@ -14,8 +14,13 @@ function constructor (id) {
 
 	$$("cchg").hide();
 	$$("cQuick").hide();
-	$$("component1_ListPV").setRowHeight(22);
-	$$("component1_ListMesure").setRowHeight(22);
+	$$("component1_ListPV").setRowHeight(20);
+	$$("component1_ListMet").setRowHeight(22);
+	sources.component1_soufflets.query("Actif is true order by Reference");
+	$$('component1_cAction').setValue("");
+	$$('component1_cMet').setValue("");
+	$$('component1_btSup').hide();
+	$$('component1_btShow').show();
 	
 	var vUser;
 	
@@ -37,23 +42,312 @@ function constructor (id) {
 	}, params:[vUser] });
 	
 	// @region namespaceDeclaration// @startlock
+	var OutRaid = {};	// @textField
+	var OutLc2 = {};	// @textField
+	var OutDc2 = {};	// @textField
+	var OutLc1 = {};	// @textField
+	var OutDc1 = {};	// @textField
+	var OutL2 = {};	// @textField
+	var OutExt = {};	// @textField
+	var OutInt = {};	// @textField
+	var ListPV = {};	// @dataGrid
+	var cbBellows = {};	// @combobox
 	var scbxDate = {};	// @checkbox
 	var scbxSoufflet = {};	// @checkbox
 	var btShow = {};	// @buttonImage
 	var btReset = {};	// @buttonImage
 	var btSearch = {};	// @buttonImage
-	var ListMesure = {};	// @dataGrid
-	var btSupMes = {};	// @buttonImage
-	var btNewMes = {};	// @buttonImage
-	var btUpdMes = {};	// @buttonImage
-	var btSaveMes = {};	// @buttonImage
 	var btSup = {};	// @buttonImage
-	var ListPV = {};	// @dataGrid
-	var bUndo = {};	// @button
-	var bSave = {};	// @button
 	// @endregion// @endlock
 
 	// eventHandlers// @lock
+
+	OutRaid.blur = function OutRaid_blur (event)// @startlock
+	{// @endlock
+		var vIntOnde, vExtOnde, vHautOnde;
+		
+		vIntOnde = event.currentTarget.value;
+		vIntOnde = vIntOnde.replace(",",".");
+		vExtOnde = $$('component1_ExtOnde').getValue();
+		vExtOnde = vExtOnde.replace(",",".");
+		vIntOnde = parseFloat(vIntOnde);
+		vExtOnde = parseFloat(vExtOnde);
+		if ((vIntOnde > 0) && (vExtOnde > 0)) {
+			vHautOnde = parseFloat((vExtOnde - vIntOnde)/2);
+			$$('component1_HautOnde').setValue(vHautOnde);
+		} else {
+			$$('component1_HautOnde').setValue("");
+		}
+	};// @lock
+
+	OutLc2.blur = function OutLc2_blur (event)// @startlock
+	{// @endlock
+		var vIntOnde, vExtOnde, vHautOnde;
+		
+		vIntOnde = event.currentTarget.value;
+		vIntOnde = vIntOnde.replace(",",".");
+		vExtOnde = $$('component1_ExtOnde').getValue();
+		vExtOnde = vExtOnde.replace(",",".");
+		vIntOnde = parseFloat(vIntOnde);
+		vExtOnde = parseFloat(vExtOnde);
+		if ((vIntOnde > 0) && (vExtOnde > 0)) {
+			vHautOnde = parseFloat((vExtOnde - vIntOnde)/2);
+			$$('component1_HautOnde').setValue(vHautOnde);
+		} else {
+			$$('component1_HautOnde').setValue("");
+		}
+	};// @lock
+
+	OutDc2.blur = function OutDc2_blur (event)// @startlock
+	{// @endlock
+		var vIntOnde, vExtOnde, vHautOnde;
+		
+		vIntOnde = event.currentTarget.value;
+		vIntOnde = vIntOnde.replace(",",".");
+		vExtOnde = $$('component1_ExtOnde').getValue();
+		vExtOnde = vExtOnde.replace(",",".");
+		vIntOnde = parseFloat(vIntOnde);
+		vExtOnde = parseFloat(vExtOnde);
+		if ((vIntOnde > 0) && (vExtOnde > 0)) {
+			vHautOnde = parseFloat((vExtOnde - vIntOnde)/2);
+			$$('component1_HautOnde').setValue(vHautOnde);
+		} else {
+			$$('component1_HautOnde').setValue("");
+		}
+	};// @lock
+
+	OutLc1.blur = function OutLc1_blur (event)// @startlock
+	{// @endlock
+		var vIntOnde, vExtOnde, vHautOnde;
+		
+		vIntOnde = event.currentTarget.value;
+		vIntOnde = vIntOnde.replace(",",".");
+		vExtOnde = $$('component1_ExtOnde').getValue();
+		vExtOnde = vExtOnde.replace(",",".");
+		vIntOnde = parseFloat(vIntOnde);
+		vExtOnde = parseFloat(vExtOnde);
+		if ((vIntOnde > 0) && (vExtOnde > 0)) {
+			vHautOnde = parseFloat((vExtOnde - vIntOnde)/2);
+			$$('component1_HautOnde').setValue(vHautOnde);
+		} else {
+			$$('component1_HautOnde').setValue("");
+		}
+	};// @lock
+
+	OutDc1.blur = function OutDc1_blur (event)// @startlock
+	{// @endlock
+		var vIntOnde, vExtOnde, vHautOnde;
+		
+		vIntOnde = event.currentTarget.value;
+		vIntOnde = vIntOnde.replace(",",".");
+		vExtOnde = $$('component1_ExtOnde').getValue();
+		vExtOnde = vExtOnde.replace(",",".");
+		vIntOnde = parseFloat(vIntOnde);
+		vExtOnde = parseFloat(vExtOnde);
+		if ((vIntOnde > 0) && (vExtOnde > 0)) {
+			vHautOnde = parseFloat((vExtOnde - vIntOnde)/2);
+			$$('component1_HautOnde').setValue(vHautOnde);
+		} else {
+			$$('component1_HautOnde').setValue("");
+		}
+	};// @lock
+
+	OutL2.blur = function OutL2_blur (event)// @startlock
+	{// @endlock
+		var vIntOnde, vExtOnde, vHautOnde;
+		
+		vIntOnde = event.currentTarget.value;
+		vIntOnde = vIntOnde.replace(",",".");
+		vExtOnde = $$('component1_ExtOnde').getValue();
+		vExtOnde = vExtOnde.replace(",",".");
+		vIntOnde = parseFloat(vIntOnde);
+		vExtOnde = parseFloat(vExtOnde);
+		if ((vIntOnde > 0) && (vExtOnde > 0)) {
+			vHautOnde = parseFloat((vExtOnde - vIntOnde)/2);
+			$$('component1_HautOnde').setValue(vHautOnde);
+		} else {
+			$$('component1_HautOnde').setValue("");
+		}
+	};// @lock
+
+	OutExt.blur = function OutExt_blur (event)// @startlock
+	{// @endlock
+		var vIntOnde, vExtOnde, vHautOnde;
+		
+		vIntOnde = event.currentTarget.value;
+		vIntOnde = vIntOnde.replace(",",".");
+		vExtOnde = $$('component1_ExtOnde').getValue();
+		vExtOnde = vExtOnde.replace(",",".");
+		vIntOnde = parseFloat(vIntOnde);
+		vExtOnde = parseFloat(vExtOnde);
+		if ((vIntOnde > 0) && (vExtOnde > 0)) {
+			vHautOnde = parseFloat((vExtOnde - vIntOnde)/2);
+			$$('component1_HautOnde').setValue(vHautOnde);
+		} else {
+			$$('component1_HautOnde').setValue("");
+		}
+	};// @lock
+
+	OutInt.blur = function OutInt_blur (event)// @startlock
+	{// @endlock
+		var vIntOnde, vExtOnde, vHautOnde;
+		
+		vIntOnde = event.currentTarget.value;
+		vIntOnde = vIntOnde.replace(",",".");
+		vExtOnde = $$('component1_ExtOnde').getValue();
+		vExtOnde = vExtOnde.replace(",",".");
+		vIntOnde = parseFloat(vIntOnde);
+		vExtOnde = parseFloat(vExtOnde);
+		if ((vIntOnde > 0) && (vExtOnde > 0)) {
+			vHautOnde = parseFloat((vExtOnde - vIntOnde)/2);
+			$$('component1_HautOnde').setValue(vHautOnde);
+		} else {
+			$$('component1_HautOnde').setValue("");
+		}
+	};// @lock
+
+	ListPV.onRowClick = function ListPV_onRowClick (event)// @startlock
+	{// @endlock
+
+		var vbNam, NbMet, vAction, vMet, v, vPVID, ibx;
+		
+		vbNam = $$('component1_RefBel').getValue();
+		sources.component1_ficheMethode.query("Soufflet.Reference=:1", vbNam);
+		sources.component1_soufflets.query("Reference=:1", vbNam);
+		
+		for (var i = 1; i < 6; i++) {
+			v = "component1_n"+i;
+			$$(v).setValue("");
+			$$(v).setReadOnly(true);
+			v = "component1_Int"+i;
+			$$(v).setValue("");
+			$$(v).setReadOnly(true);
+			v = "component1_Ext"+i;
+			$$(v).setValue("");
+			$$(v).setReadOnly(true);
+			v = "component1_Haut"+i;
+			$$(v).setValue("");
+			$$(v).setReadOnly(true);
+			v = "component1_Nb"+i;
+			$$(v).setValue("");
+			$$(v).setReadOnly(true);
+			v = "component1_L2"+i;
+			$$(v).setValue("");
+			$$(v).setReadOnly(true);
+			v = "component1_Dc1"+i;
+			$$(v).setValue("");
+			$$(v).setReadOnly(true);
+			v = "component1_Lc1"+i;
+			$$(v).setValue("");
+			$$(v).setReadOnly(true);
+			v = "component1_Dc2"+i;
+			$$(v).setValue("");
+			$$(v).setReadOnly(true);
+			v = "component1_Lc2"+i;
+			$$(v).setValue("");
+			$$(v).setReadOnly(true);
+			v = "component1_Raid"+i;
+			$$(v).setValue("");
+			$$(v).setReadOnly(true);
+			v = "component1_mes"+i;
+			$$(v).setValue("0Vide");
+			$$(v).setReadOnly(true);
+		}
+		
+		vPVID = sources.component1_pVProduction.ID;
+		sources.component1_mesures.query("PV.ID = :1 order by ID", { onSuccess: function(event) {
+			var ind, nb,v, MesCol, v ;
+			MesCol = sources.component1_mesures;
+			ind = MesCol.length;
+			ibx = 1;
+			for (var i = 0; i < ind; i++) {
+				MesCol.getElement(i, { onSuccess: function(event) {
+					var elem = event.element;
+					if (ibx < 6) {
+						v = "component1_n"+ibx;
+						$$(v).setValue(elem.Num_Piece);
+						$$(v).setReadOnly(true);
+						v = "component1_Int"+ibx;
+						$$(v).setValue(elem.Int_Onde);
+						$$(v).setReadOnly(true);
+						v = "component1_Ext"+ibx;
+						$$(v).setValue(elem.Ext_Onde);
+						$$(v).setReadOnly(true);
+						v = "component1_Haut"+ibx;
+						$$(v).setValue(elem.Haut_Onde);
+						$$(v).setReadOnly(true);
+						v = "component1_Nb"+ibx;
+						$$(v).setValue(elem.Nb_Ondes);
+						$$(v).setReadOnly(true);
+						v = "component1_L2"+ibx;
+						$$(v).setValue(elem.L2);
+						$$(v).setReadOnly(true);
+						v = "component1_Dc1"+ibx;
+						$$(v).setValue(elem.Diam_Collet1);
+						$$(v).setReadOnly(true);
+						v = "component1_Lc1"+ibx;
+						$$(v).setValue(elem.Long_Collet1);
+						$$(v).setReadOnly(true);
+						v = "component1_Dc2"+ibx;
+						$$(v).setValue(elem.Diam_Collet2);
+						$$(v).setReadOnly(true);
+						v = "component1_Lc2"+ibx;
+						$$(v).setValue(elem.Long_Collet2);
+						$$(v).setReadOnly(true);
+						v = "component1_Raid"+ibx;
+						$$(v).setValue(elem.Raideur);
+						$$(v).setReadOnly(true);
+						v = "component1_mes"+ibx;
+						$$(v).setValue(elem.ID);
+						ibx += 1;
+					}
+				}});
+			}
+		}, params:[vPVID]});
+		
+		
+		$$('component1_btSup').show();
+	};// @lock
+
+	cbBellows.click = function cbBellows_click (event)// @startlock
+	{// @endlock
+		sources.component1_ficheMethode.query("Soufflet.ID=0");
+		$$('component1_cMet').setValue("?");
+		
+	};// @lock
+
+	cbBellows.change = function cbBellows_change (event)// @startlock
+	{// @endlock
+	var vbID, NbMet, vAction, vMet;
+		
+		vbID = $$('component1_cbBellows').getValue();
+		vAction = $$('component1_cAction').getValue();
+		vMet = $$('component1_cMet').getValue();
+		if (vAction === "Créer") {
+			ds.FicheMethode.query("Soufflet.ID=:1", { 
+				onSuccess:function(event) {
+					var myCollection = event.entityCollection;
+					NbMet = myCollection.length;
+					//alert("Recherche une fiche méthode pour le soufflet " + vbID + ". On en trouve " + NbMet);
+					if (vMet === "?") {
+						if (NbMet === 0) {
+							sources.component1_ficheMethode.addNewElement();
+							//alert("Il n'y a pas de valeurs de tolérance existantes pour ce soufflet. Merci de les renseigner si vous les avez.");	
+							$$('component1_cMet').setValue("Nouveau");
+							} else {
+							sources.component1_ficheMethode.query("Soufflet.ID=:1", vbID);
+							$$('component1_cMet').setValue("Trouvé");
+							}
+						}
+					}, params:[vbID] 
+				});
+		}
+	};// @lock
+
+	cbBellows.blur = function cbBellows_blur (event)// @startlock
+	{// @endlock
+		
+	};// @lock
 
 	scbxDate.click = function scbxDate_click (event)// @startlock
 	{// @endlock
@@ -86,8 +380,6 @@ function constructor (id) {
 	{// @endlock
 		$$('component1_btSup').hide();
 		$$('component1_btShow').hide();
-		$$('component1_bNew').hide();
-		$$('component1_bUpdate').hide();
 		$$('component1_ListPV').disable();
 		$$('component1_PanelSearch').show();
 		
@@ -99,7 +391,6 @@ function constructor (id) {
 		$$('component1_scDDeb').hide();
 		$$('component1_scDFin').hide();
 		$$('component1_scLanc').setValue(null);
-		$$('component1_scCom').setValue(null);
 		$$('component1_scbxSoufflet').uncheck();
 		$$('component1_scbxDate').uncheck();
 		
@@ -109,7 +400,7 @@ function constructor (id) {
 	{// @endlock
 		var LQuery, pRef, pCode, pMat, pOutil, pForm, p1C1, p2C1, p1C2, p2C2, pParm, pParM, vUser, vDeb, vFin, elem;
 		
-		$$('component1_bNew').show();
+		
 		$$('component1_btShow').show();
 		$$('component1_ListPV').enable();
 		$$('component1_ListPV').setReadOnly(true);
@@ -123,12 +414,7 @@ function constructor (id) {
 			LQuery = "Num_Lancement = '*" + $$('component1_scLanc').getValue() + "*' ";
 		}
 			
-		if ($$('component1_scCom').getValue().length === 0) {
-			pCode = "*";
-		} else {
-			LQuery = LQuery + "and Num_Commande = '*" + $$('component1_scCom').getValue() + "*' ";
-		}
-		
+				
 		pOutil = "*";
 		if ($$('component1_scbxSoufflet').getValue()) {
 			pOutil = $$('component1_scbSoufflet').getValue();
@@ -183,176 +469,6 @@ function constructor (id) {
 		
 	};// @lock
 
-	ListMesure.onRowClick = function ListMesure_onRowClick (event)// @startlock
-	{// @endlock
-		var vRole;
-		
-		vRole = $$("component1_cRole").getValue();
-		if (vRole === "Administrateur") {
-			$$('component1_btSupMes').show();
-			$$('component1_btUpdMes').show();
-			$$('component1_btSaveMes').hide();
-		}
-	};// @lock
-
-	btSupMes.click = function btSupMes_click (event)// @startlock
-	{// @endlock
-		var isok, vRole;
-		
-		isok = confirm( "Voulez-vous vraiment supprimer cette mesure de ce PV de production ?");
-		
-		if (isok) {
-			sources.component1_mesures.removeCurrent();
-			$$('component1_btSupMes').hide();
-			$$('component1_btUpdMes').hide();
-		}
-	};// @lock
-
-	btNewMes.click = function btNewMes_click (event)// @startlock
-	{// @endlock
-		sources.component1_mesures.addNewElement();
-		
-		$$('component1_btSupMes').hide();
-		$$('component1_btSaveMes').show();
-		$$('component1_btUpdMes').hide();
-		$$('component1_btNewMes').hide();
-		$$('component1_bUpdate').hide();
-		$$('component1_btSup').hide();
-		$$('component1_bNew').hide();
-		$$('component1_ListPV').disable();
-		$$("component1_ListMesure").disable();
-		
-		$$('component1_cNumLanc').hide();
-		$$('component1_cNumCom').hide();
-		$$('component1_cDesign').hide();
-		$$('component1_cRefBellow').hide();
-		$$('component1_cCodeBellow').hide();
-		$$('component1_cQuant').hide();
-		$$('component1_cNbOndes').hide();
-		$$('component1_cEpParois').hide();
-		$$('component1_cDiaCol1').hide();
-		$$('component1_cDiaCol2').hide();
-		$$('component1_cDiaEOnde').hide();
-		$$('component1_cDiaIOnde').hide();
-		$$('component1_cL2').hide();
-		$$('component1_cL3').hide();
-		$$('component1_cRaideur').hide();
-		$$('component1_LibCD').hide();
-		$$('component1_cbMoyenC').show();
-		$$('component1_mPiece').show();
-		$$('component1_LibMes').show();
-		$$('component1_mNbOndes').show();
-		$$('component1_mEpParois').show();
-		$$('component1_mDiaCol1').show();
-		$$('component1_mDiaCol2').show();
-		$$('component1_mDiaEOnde').show();
-		$$('component1_mDiaIOnde').show();
-		$$('component1_mL2').show();
-		$$('component1_mL3').show();
-		$$('component1_mRaideur').show();
-		
-		
-	};// @lock
-
-	btUpdMes.click = function btUpdMes_click (event)// @startlock
-	{// @endlock
-			
-		$$('component1_btSupMes').hide();
-		$$('component1_btSaveMes').show();
-		$$('component1_btUpdMes').hide();
-		$$('component1_btNewMes').hide();
-		$$('component1_bUpdate').hide();
-		$$('component1_btSup').hide();
-		$$('component1_bNew').hide();
-		$$('component1_ListPV').disable();
-		$$("component1_ListMesure").disable();
-		
-		$$('component1_cNumLanc').hide();
-		$$('component1_cNumCom').hide();
-		$$('component1_cDesign').hide();
-		$$('component1_cRefBellow').hide();
-		$$('component1_cCodeBellow').hide();
-		$$('component1_cQuant').hide();
-		$$('component1_cNbOndes').hide();
-		$$('component1_cEpParois').hide();
-		$$('component1_cDiaCol1').hide();
-		$$('component1_cDiaCol2').hide();
-		$$('component1_cDiaEOnde').hide();
-		$$('component1_cDiaIOnde').hide();
-		$$('component1_cL2').hide();
-		$$('component1_cL3').hide();
-		$$('component1_cRaideur').hide();
-		$$('component1_LibCD').hide();
-		$$('component1_cbMoyenC').show();
-		$$('component1_mPiece').show();
-		$$('component1_LibMes').show();
-		$$('component1_mNbOndes').show();
-		$$('component1_mEpParois').show();
-		$$('component1_mDiaCol1').show();
-		$$('component1_mDiaCol2').show();
-		$$('component1_mDiaEOnde').show();
-		$$('component1_mDiaIOnde').show();
-		$$('component1_mL2').show();
-		$$('component1_mL3').show();
-		$$('component1_mRaideur').show();
-		$$('component1_cbMoyenC').setValue($$('component1_mMoyenC').getValue());
-		
-				
-	};// @lock
-
-	btSaveMes.click = function btSaveMes_click (event)// @startlock
-	{// @endlock
-		var vPVID, vMoyen;
-			
-		$$('component1_btSupMes').hide();
-		$$('component1_btSaveMes').hide();
-		$$('component1_btUpdMes').hide();
-		$$('component1_btNewMes').show();
-		$$('component1_bUpdate').hide();
-		$$('component1_btSup').hide();
-		$$('component1_bNew').show();
-		$$('component1_ListPV').enable();
-		$$("component1_ListMesure").enable();
-		$$('component1_ListPV').setReadOnly(true);
-		$$('component1_ListMesure').setReadOnly(true);
-		$$('component1_cNumLanc').show();
-		$$('component1_cNumCom').show();
-		$$('component1_cDesign').show();
-		$$('component1_cRefBellow').show();
-		$$('component1_cCodeBellow').show();
-		$$('component1_cQuant').show();
-		$$('component1_cNbOndes').show();
-		$$('component1_cEpParois').show();
-		$$('component1_cDiaCol1').show();
-		$$('component1_cDiaCol2').show();
-		$$('component1_cDiaEOnde').show();
-		$$('component1_cDiaIOnde').show();
-		$$('component1_cL2').show();
-		$$('component1_cL3').show();
-		$$('component1_cRaideur').show();
-		$$('component1_LibCD').show();
-		$$('component1_cbMoyenC').hide();
-		$$('component1_mPiece').hide();
-		$$('component1_LibMes').hide();
-		$$('component1_mNbOndes').hide();
-		$$('component1_mEpParois').hide();
-		$$('component1_mDiaCol1').hide();
-		$$('component1_mDiaCol2').hide();
-		$$('component1_mDiaEOnde').hide();
-		$$('component1_mDiaIOnde').hide();
-		$$('component1_mL2').hide();
-		$$('component1_mL3').hide();
-		$$('component1_mRaideur').hide();
-		$$('component1_mMoyenC').setValue($$('component1_cbMoyenC').getValue());
-		
-		sources.component1_mesures.PV.set(sources.component1_pVProduction);
-		sources.component1_mesures.save();
-		
-		vPVID = sources.component1_pVProduction.ID;
-		sources.component1_mesures.query("PV.ID = :1 order by ID desc", vPVID);
-		
-	};// @lock
-
 	btSup.click = function btSup_click (event)// @startlock
 	{// @endlock
 		var isok, vRole;
@@ -362,120 +478,28 @@ function constructor (id) {
 		if (isok) {
 			sources.component1_pVProduction.removeCurrent();
 			$$('component1_btSup').hide();
-			$$('component1_bUpdate').hide();
 		}
-	};// @lock
-
-	ListPV.onRowClick = function ListPV_onRowClick (event)// @startlock
-	{// @endlock
-		var vRole, vPVID;
-		
-		$$('component1_bUpdate').show();
-		vRole = $$("component1_cRole").getValue();
-		if (vRole === "Administrateur") {
-			$$('component1_btSup').show();
-			$$('component1_btNewMes').show();
-			$$('component1_btSupMes').hide();
-			$$('component1_btUpdMes').hide();
-			$$('component1_btSaveMes').hide();
-		}
-		vPVID = sources.component1_pVProduction.ID;
-		sources.component1_mesures.query("PV.ID = :1 order by ID desc", vPVID);
-	};// @lock
-
-	bUndo.click = function bUndo_click (event)// @startlock
-	{// @endlock
-		$$('component1_cNumLanc').getLabel().setTextColor("black");
-		$$('component1_cNumCom').getLabel().setTextColor("black");
-		$$('component1_cQuant').getLabel().setTextColor("black");
-		$$('component1_ListPV').enable();
-		$$('component1_ListPV').setReadOnly(true);
-		$$('component1_cAction').setValue("-");
-		$$('component1').loadComponent("/Gest_PV.waComponent");
-		
-	};// @lock
-
-	bSave.click = function bSave_click (event)// @startlock
-	{// @endlock
-		var vActif;
-		
-		$$('component1_bUpdate').hide();
-		$$('component1_bSave').hide();
-		$$('component1_bUndo').hide();
-		$$('component1_bNew').show();
-		$$('component1_btShow').show();
-		$$('component1_btnBellow').hide();
-		$$('component1_btSup').hide();
-		$$('component1_ListPV').enable();
-		$$('component1_ListPV').setReadOnly(true);
-		$$('component1_cNumLanc').setReadOnly(true);
-		$$('component1_cNumCom').setReadOnly(true);
-		$$('component1_cDesign').setReadOnly(true);
-		$$('component1_cRefBellow').show();
-		$$('component1_cCodeBellow').show();
-		$$('component1_cbBellows').hide();
-		$$('component1_xCodeBellow').hide();
-		$$('component1_cQuant').setReadOnly(true);
-		$$('component1_cNbOndes').setReadOnly(true);
-		$$('component1_cEpParois').setReadOnly(true);
-		$$('component1_cDiaCol1').setReadOnly(true);
-		$$('component1_cDiaCol2').setReadOnly(true);
-		$$('component1_cDiaEOnde').setReadOnly(true);
-		$$('component1_cDiaIOnde').setReadOnly(true);
-		$$('component1_cL2').setReadOnly(true);
-		$$('component1_cL3').setReadOnly(true);
-		$$('component1_cRaideur').setReadOnly(true);
-		$$('component1_rNbOndes').show();
-		$$('component1_rEpParois').show();
-		$$('component1_rDiaCol1').show();
-		$$('component1_rDiaCol2').show();
-		$$('component1_rDiaEOnde').show();
-		$$('component1_rDiaIOnde').show();
-		$$('component1_rL2').show();
-		$$('component1_rL3').show();
-		$$('component1_rRaideur').show();
-		$$('component1_xNbOndes').hide();
-		$$('component1_xEpParois').hide();
-		$$('component1_xDiaCol1').hide();
-		$$('component1_xDiaCol2').hide();
-		$$('component1_xDiaEOnde').hide();
-		$$('component1_xDiaIOnde').hide();
-		$$('component1_xL2').hide();
-		$$('component1_xL3').hide();
-		$$('component1_xRaideur').hide();
-		$$("component1_ListMesure").show();
-		$$('component1_btNewMes').show();
-		$$('component1_btSupMes').hide();
-		$$('component1_btUpdMes').hide();
-		$$('component1_btSaveMes').hide();
-		$$('component1_cNumLanc').getLabel().setTextColor("black");
-		$$('component1_cNumCom').getLabel().setTextColor("black");
-		$$('component1_cQuant').getLabel().setTextColor("black");
-	
-		$$('component1_cAction').setValue("-");
-
-		sources.component1_pVProduction.Client.set(sources.component1_clients);
-		sources.component1_pVProduction.Soufflet.set(sources.component1_soufflets);
-		sources.component1_pVProduction.save();
-		
-				
 	};// @lock
 
 	// @region eventManager// @startlock
+	WAF.addListener(this.id + "_OutRaid", "blur", OutRaid.blur, "WAF");
+	WAF.addListener(this.id + "_OutLc2", "blur", OutLc2.blur, "WAF");
+	WAF.addListener(this.id + "_OutDc2", "blur", OutDc2.blur, "WAF");
+	WAF.addListener(this.id + "_OutLc1", "blur", OutLc1.blur, "WAF");
+	WAF.addListener(this.id + "_OutDc1", "blur", OutDc1.blur, "WAF");
+	WAF.addListener(this.id + "_OutL2", "blur", OutL2.blur, "WAF");
+	WAF.addListener(this.id + "_OutExt", "blur", OutExt.blur, "WAF");
+	WAF.addListener(this.id + "_OutInt", "blur", OutInt.blur, "WAF");
+	WAF.addListener(this.id + "_ListPV", "onRowClick", ListPV.onRowClick, "WAF");
+	WAF.addListener(this.id + "_cbBellows", "click", cbBellows.click, "WAF");
+	WAF.addListener(this.id + "_cbBellows", "change", cbBellows.change, "WAF");
+	WAF.addListener(this.id + "_cbBellows", "blur", cbBellows.blur, "WAF");
 	WAF.addListener(this.id + "_scbxDate", "click", scbxDate.click, "WAF");
 	WAF.addListener(this.id + "_scbxSoufflet", "click", scbxSoufflet.click, "WAF");
 	WAF.addListener(this.id + "_btShow", "click", btShow.click, "WAF");
 	WAF.addListener(this.id + "_btReset", "click", btReset.click, "WAF");
 	WAF.addListener(this.id + "_btSearch", "click", btSearch.click, "WAF");
-	WAF.addListener(this.id + "_ListMesure", "onRowClick", ListMesure.onRowClick, "WAF");
-	WAF.addListener(this.id + "_btSupMes", "click", btSupMes.click, "WAF");
-	WAF.addListener(this.id + "_btNewMes", "click", btNewMes.click, "WAF");
-	WAF.addListener(this.id + "_btUpdMes", "click", btUpdMes.click, "WAF");
-	WAF.addListener(this.id + "_btSaveMes", "click", btSaveMes.click, "WAF");
 	WAF.addListener(this.id + "_btSup", "click", btSup.click, "WAF");
-	WAF.addListener(this.id + "_ListPV", "onRowClick", ListPV.onRowClick, "WAF");
-	WAF.addListener(this.id + "_bUndo", "click", bUndo.click, "WAF");
-	WAF.addListener(this.id + "_bSave", "click", bSave.click, "WAF");
 	// @endregion// @endlock
 
 	};// @lock
