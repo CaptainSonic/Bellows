@@ -22,6 +22,7 @@ function constructor (id) {
 	$$('component1_btSup').hide();
 	$$('component1_btShow').show();
 	
+	
 	var vUser;
 	
 	vUser = WAF.directory.currentUser().userName;
