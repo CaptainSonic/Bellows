@@ -44,6 +44,41 @@ function constructor (id) {
 	}, params:[vUser] });
 
 	// @region namespaceDeclaration// @startlock
+	var Raid5 = {};	// @textField
+	var Raid4 = {};	// @textField
+	var Raid3 = {};	// @textField
+	var Raid2 = {};	// @textField
+	var Raid1 = {};	// @textField
+	var Lc25 = {};	// @textField
+	var Lc24 = {};	// @textField
+	var Lc23 = {};	// @textField
+	var Lc22 = {};	// @textField
+	var Lc21 = {};	// @textField
+	var Dc25 = {};	// @textField
+	var Dc24 = {};	// @textField
+	var Dc23 = {};	// @textField
+	var Dc22 = {};	// @textField
+	var Dc21 = {};	// @textField
+	var Lc15 = {};	// @textField
+	var Lc14 = {};	// @textField
+	var Lc13 = {};	// @textField
+	var Lc12 = {};	// @textField
+	var Lc11 = {};	// @textField
+	var Dc15 = {};	// @textField
+	var Dc14 = {};	// @textField
+	var Dc13 = {};	// @textField
+	var Dc12 = {};	// @textField
+	var Dc11 = {};	// @textField
+	var L25 = {};	// @textField
+	var L24 = {};	// @textField
+	var L23 = {};	// @textField
+	var L22 = {};	// @textField
+	var L21 = {};	// @textField
+	var Nb5 = {};	// @textField
+	var Nb4 = {};	// @textField
+	var Nb3 = {};	// @textField
+	var Nb2 = {};	// @textField
+	var Nb1 = {};	// @textField
 	var Ext5 = {};	// @textField
 	var Int5 = {};	// @textField
 	var n5 = {};	// @textField
@@ -73,6 +108,322 @@ function constructor (id) {
 
 	// eventHandlers// @lock
 
+	Raid5.blur = function Raid5_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseFloat(vNb);
+		$$('component1_Raid5').setValue(vNb);
+	};// @lock
+
+	Raid4.blur = function Raid4_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseFloat(vNb);
+		$$('component1_Raid4').setValue(vNb);
+	};// @lock
+
+	Raid3.blur = function Raid3_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseFloat(vNb);
+		$$('component1_Raid3').setValue(vNb);
+	};// @lock
+
+	Raid2.blur = function Raid2_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseFloat(vNb);
+		$$('component1_Raid2').setValue(vNb);
+	};// @lock
+
+	Raid1.blur = function Raid1_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseFloat(vNb);
+		$$('component1_Raid1').setValue(vNb);
+	};// @lock
+
+	Lc25.blur = function Lc25_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseFloat(vNb);
+		$$('component1_Lc25').setValue(vNb);
+	};// @lock
+
+	Lc24.blur = function Lc24_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseFloat(vNb);
+		$$('component1_Lc24').setValue(vNb);
+	};// @lock
+
+	Lc23.blur = function Lc23_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseFloat(vNb);
+		$$('component1_Lc23').setValue(vNb);
+	};// @lock
+
+	Lc22.blur = function Lc22_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseFloat(vNb);
+		$$('component1_Lc22').setValue(vNb);
+	};// @lock
+
+	Lc21.blur = function Lc21_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseFloat(vNb);
+		$$('component1_Lc21').setValue(vNb);
+	};// @lock
+
+	Dc25.blur = function Dc25_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseFloat(vNb);
+		$$('component1_Dc25').setValue(vNb);
+	};// @lock
+
+	Dc24.blur = function Dc24_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseFloat(vNb);
+		$$('component1_Dc24').setValue(vNb);
+	};// @lock
+
+	Dc23.blur = function Dc23_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseFloat(vNb);
+		$$('component1_Dc23').setValue(vNb);
+	};// @lock
+
+	Dc22.blur = function Dc22_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseFloat(vNb);
+		$$('component1_Dc22').setValue(vNb);
+	};// @lock
+
+	Dc21.blur = function Dc21_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseFloat(vNb);
+		$$('component1_Dc21').setValue(vNb);
+	};// @lock
+
+	Lc15.blur = function Lc15_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseFloat(vNb);
+		$$('component1_Lc15').setValue(vNb);
+	};// @lock
+
+	Lc14.blur = function Lc14_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseFloat(vNb);
+		$$('component1_Lc14').setValue(vNb);
+	};// @lock
+
+	Lc13.blur = function Lc13_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseFloat(vNb);
+		$$('component1_Lc13').setValue(vNb);
+	};// @lock
+
+	Lc12.blur = function Lc12_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseFloat(vNb);
+		$$('component1_Lc12').setValue(vNb);
+	};// @lock
+
+	Lc11.blur = function Lc11_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseFloat(vNb);
+		$$('component1_Lc11').setValue(vNb);
+	};// @lock
+
+	Dc15.blur = function Dc15_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseFloat(vNb);
+		$$('component1_Dc15').setValue(vNb);
+	};// @lock
+
+	Dc14.blur = function Dc14_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseFloat(vNb);
+		$$('component1_Dc14').setValue(vNb);
+	};// @lock
+
+	Dc13.blur = function Dc13_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseFloat(vNb);
+		$$('component1_Dc13').setValue(vNb);
+	};// @lock
+
+	Dc12.blur = function Dc12_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseFloat(vNb);
+		$$('component1_Dc12').setValue(vNb);
+	};// @lock
+
+	Dc11.blur = function Dc11_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseFloat(vNb);
+		$$('component1_Dc11').setValue(vNb);
+	};// @lock
+
+	L25.blur = function L25_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseInt(vNb,10);
+		$$('component1_L25').setValue(vNb);
+	};// @lock
+
+	L24.blur = function L24_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseInt(vNb,10);
+		$$('component1_L24').setValue(vNb);
+	};// @lock
+
+	L23.blur = function L23_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseInt(vNb,10);
+		$$('component1_L23').setValue(vNb);
+	};// @lock
+
+	L22.blur = function L22_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseInt(vNb,10);
+		$$('component1_L22').setValue(vNb);
+	};// @lock
+
+	L21.blur = function L21_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseInt(vNb,10);
+		$$('component1_L21').setValue(vNb);
+	};// @lock
+
+	Nb5.blur = function Nb5_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseInt(vNb,10);
+		$$('component1_Nb5').setValue(vNb);
+	};// @lock
+
+	Nb4.blur = function Nb4_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseInt(vNb,10);
+		$$('component1_Nb4').setValue(vNb);
+	};// @lock
+
+	Nb3.blur = function Nb3_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseInt(vNb,10);
+		$$('component1_Nb3').setValue(vNb);
+	};// @lock
+
+	Nb2.blur = function Nb2_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseInt(vNb,10);
+		$$('component1_Nb2').setValue(vNb);
+	};// @lock
+
+	Nb1.blur = function Nb1_blur (event)// @startlock
+	{// @endlock
+		var vNb;
+		vNb = event.currentTarget.value;
+		vNb = vNb.replace(",",".");
+		vNb = parseInt(vNb,10);
+		$$('component1_Nb1').setValue(vNb);
+		
+	};// @lock
+
 	Ext5.blur = function Ext5_blur (event)// @startlock
 	{// @endlock
 		var vIntOnde, vExtOnde, vHautOnde;
@@ -83,6 +434,8 @@ function constructor (id) {
 		vIntOnde = vIntOnde.replace(",",".");
 		vIntOnde = parseFloat(vIntOnde);
 		vExtOnde = parseFloat(vExtOnde);
+		$$('component1_Int5').setValue(vIntOnde);
+		$$('component1_Ext5').setValue(vExtOnde);
 		if ((vIntOnde > 0) && (vExtOnde > 0)) {
 			vHautOnde = parseFloat(((vExtOnde - vIntOnde)/2),10);
 			//alert("Ext " + vExtOnde + " - Int " + vIntOnde + " - Haut " + vHautOnde);
@@ -102,6 +455,8 @@ function constructor (id) {
 		vExtOnde = vExtOnde.replace(",",".");
 		vIntOnde = parseFloat(vIntOnde);
 		vExtOnde = parseFloat(vExtOnde);
+		$$('component1_Int5').setValue(vIntOnde);
+		$$('component1_Ext5').setValue(vExtOnde);
 		if ((vIntOnde > 0) && (vExtOnde > 0)) {
 			vHautOnde = parseFloat((vExtOnde - vIntOnde)/2);
 			$$('component1_Haut5').setValue(vHautOnde);
@@ -114,11 +469,11 @@ function constructor (id) {
 	{// @endlock
 		var vNum;
 		vNum = event.currentTarget.value;
-		if ((vNum.length > 0) && ($$('component1_mes5').getValue() === "Vide")){
-			$$('component1_mes5').setValue("A créer");
+		if ((vNum.length > 0) && ($$('component1_mes5').getValue() === "0Vide")){
+			$$('component1_mes5').setValue("0A créer");
 		}
-		if ((vNum.length === 0) && ($$('component1_mes5').getValue() === "A créer")){
-			$$('component1_mes5').setValue("Vide");
+		if ((vNum.length === 0) && ($$('component1_mes5').getValue() === "0A créer")){
+			$$('component1_mes5').setValue("0Vide");
 		}
 	};// @lock
 
@@ -132,6 +487,8 @@ function constructor (id) {
 		vIntOnde = vIntOnde.replace(",",".");
 		vIntOnde = parseFloat(vIntOnde);
 		vExtOnde = parseFloat(vExtOnde);
+		$$('component1_Int4').setValue(vIntOnde);
+		$$('component1_Ext4').setValue(vExtOnde);
 		if ((vIntOnde > 0) && (vExtOnde > 0)) {
 			vHautOnde = parseFloat(((vExtOnde - vIntOnde)/2),10);
 			//alert("Ext " + vExtOnde + " - Int " + vIntOnde + " - Haut " + vHautOnde);
@@ -151,6 +508,8 @@ function constructor (id) {
 		vExtOnde = vExtOnde.replace(",",".");
 		vIntOnde = parseFloat(vIntOnde);
 		vExtOnde = parseFloat(vExtOnde);
+		$$('component1_Int4').setValue(vIntOnde);
+		$$('component1_Ext4').setValue(vExtOnde);
 		if ((vIntOnde > 0) && (vExtOnde > 0)) {
 			vHautOnde = parseFloat((vExtOnde - vIntOnde)/2);
 			$$('component1_Haut4').setValue(vHautOnde);
@@ -163,11 +522,11 @@ function constructor (id) {
 	{// @endlock
 		var vNum;
 		vNum = event.currentTarget.value;
-		if ((vNum.length > 0) && ($$('component1_mes4').getValue() === "Vide")){
-			$$('component1_mes4').setValue("A créer");
+		if ((vNum.length > 0) && ($$('component1_mes4').getValue() === "0Vide")){
+			$$('component1_mes4').setValue("0A créer");
 		}
-		if ((vNum.length === 0) && ($$('component1_mes4').getValue() === "A créer")){
-			$$('component1_mes4').setValue("Vide");
+		if ((vNum.length === 0) && ($$('component1_mes4').getValue() === "0A créer")){
+			$$('component1_mes4').setValue("0Vide");
 		}
 	};// @lock
 
@@ -181,6 +540,8 @@ function constructor (id) {
 		vIntOnde = vIntOnde.replace(",",".");
 		vIntOnde = parseFloat(vIntOnde);
 		vExtOnde = parseFloat(vExtOnde);
+		$$('component1_Int3').setValue(vIntOnde);
+		$$('component1_Ext3').setValue(vExtOnde);
 		if ((vIntOnde > 0) && (vExtOnde > 0)) {
 			vHautOnde = parseFloat(((vExtOnde - vIntOnde)/2),10);
 			//alert("Ext " + vExtOnde + " - Int " + vIntOnde + " - Haut " + vHautOnde);
@@ -200,6 +561,8 @@ function constructor (id) {
 		vExtOnde = vExtOnde.replace(",",".");
 		vIntOnde = parseFloat(vIntOnde);
 		vExtOnde = parseFloat(vExtOnde);
+		$$('component1_Int3').setValue(vIntOnde);
+		$$('component1_Ext3').setValue(vExtOnde);
 		if ((vIntOnde > 0) && (vExtOnde > 0)) {
 			vHautOnde = parseFloat((vExtOnde - vIntOnde)/2);
 			$$('component1_Haut3').setValue(vHautOnde);
@@ -212,11 +575,11 @@ function constructor (id) {
 	{// @endlock
 		var vNum;
 		vNum = event.currentTarget.value;
-		if ((vNum.length > 0) && ($$('component1_mes3').getValue() === "Vide")){
-			$$('component1_mes3').setValue("A créer");
+		if ((vNum.length > 0) && ($$('component1_mes3').getValue() === "0Vide")){
+			$$('component1_mes3').setValue("0A créer");
 		}
-		if ((vNum.length === 0) && ($$('component1_mes3').getValue() === "A créer")){
-			$$('component1_mes3').setValue("Vide");
+		if ((vNum.length === 0) && ($$('component1_mes3').getValue() === "0A créer")){
+			$$('component1_mes3').setValue("0Vide");
 		}
 	};// @lock
 
@@ -230,6 +593,8 @@ function constructor (id) {
 		vIntOnde = vIntOnde.replace(",",".");
 		vIntOnde = parseFloat(vIntOnde);
 		vExtOnde = parseFloat(vExtOnde);
+		$$('component1_Int2').setValue(vIntOnde);
+		$$('component1_Ext2').setValue(vExtOnde);
 		if ((vIntOnde > 0) && (vExtOnde > 0)) {
 			vHautOnde = parseFloat(((vExtOnde - vIntOnde)/2),10);
 			//alert("Ext " + vExtOnde + " - Int " + vIntOnde + " - Haut " + vHautOnde);
@@ -249,6 +614,8 @@ function constructor (id) {
 		vExtOnde = vExtOnde.replace(",",".");
 		vIntOnde = parseFloat(vIntOnde);
 		vExtOnde = parseFloat(vExtOnde);
+		$$('component1_Int2').setValue(vIntOnde);
+		$$('component1_Ext2').setValue(vExtOnde);
 		if ((vIntOnde > 0) && (vExtOnde > 0)) {
 			vHautOnde = parseFloat((vExtOnde - vIntOnde)/2);
 			$$('component1_Haut2').setValue(vHautOnde);
@@ -261,11 +628,11 @@ function constructor (id) {
 	{// @endlock
 		var vNum;
 		vNum = event.currentTarget.value;
-		if ((vNum.length > 0) && ($$('component1_mes2').getValue() === "Vide")){
-			$$('component1_mes2').setValue("A créer");
+		if ((vNum.length > 0) && ($$('component1_mes2').getValue() === "0Vide")){
+			$$('component1_mes2').setValue("0A créer");
 		}
-		if ((vNum.length === 0) && ($$('component1_mes2').getValue() === "A créer")){
-			$$('component1_mes2').setValue("Vide");
+		if ((vNum.length === 0) && ($$('component1_mes2').getValue() === "0A créer")){
+			$$('component1_mes2').setValue("0Vide");
 		}
 	};// @lock
 
@@ -279,9 +646,10 @@ function constructor (id) {
 		vIntOnde = vIntOnde.replace(",",".");
 		vIntOnde = parseFloat(vIntOnde);
 		vExtOnde = parseFloat(vExtOnde);
+		$$('component1_Int1').setValue(vIntOnde);
+		$$('component1_Ext1').setValue(vExtOnde);
 		if ((vIntOnde > 0) && (vExtOnde > 0)) {
-			vHautOnde = parseFloat(((vExtOnde - vIntOnde)/2),10);
-			//alert("Ext " + vExtOnde + " - Int " + vIntOnde + " - Haut " + vHautOnde);
+			vHautOnde = parseFloat((vExtOnde - vIntOnde)/2);
 			$$('component1_Haut1').setValue(vHautOnde);
 		} else {
 			$$('component1_Haut1').setValue("");
@@ -298,6 +666,8 @@ function constructor (id) {
 		vExtOnde = vExtOnde.replace(",",".");
 		vIntOnde = parseFloat(vIntOnde);
 		vExtOnde = parseFloat(vExtOnde);
+		$$('component1_Int1').setValue(vIntOnde);
+		$$('component1_Ext1').setValue(vExtOnde);
 		if ((vIntOnde > 0) && (vExtOnde > 0)) {
 			vHautOnde = parseFloat((vExtOnde - vIntOnde)/2);
 			$$('component1_Haut1').setValue(vHautOnde);
@@ -310,11 +680,11 @@ function constructor (id) {
 	{// @endlock
 		var vNum;
 		vNum = event.currentTarget.value;
-		if ((vNum.length > 0) && ($$('component1_mes1').getValue() === "Vide")){
-			$$('component1_mes1').setValue("A créer");
+		if ((vNum.length > 0) && ($$('component1_mes1').getValue() === "0Vide")){
+			$$('component1_mes1').setValue("0A créer");
 		}
-		if ((vNum.length === 0) && ($$('component1_mes1').getValue() === "A créer")){
-			$$('component1_mes1').setValue("Vide");
+		if ((vNum.length === 0) && ($$('component1_mes1').getValue() === "0A créer")){
+			$$('component1_mes1').setValue("0Vide");
 		}
 	};// @lock
 
@@ -399,12 +769,12 @@ function constructor (id) {
 			$$(v).setValue("");
 			$$(v).setReadOnly(false);
 			v = "component1_mes"+i;
-			$$(v).setValue("Vide");
+			$$(v).setValue("0Vide");
 			$$(v).setReadOnly(false);
 		}
 		
 		vPVID = sources.component1_pVProduction.ID;
-		sources.component1_mesures.query("PV.ID = :1 order by ID desc", { onSuccess: function(event) {
+		sources.component1_mesures.query("PV.ID = :1 order by ID", { onSuccess: function(event) {
 			var ind, nb,v, MesCol, v ;
 			MesCol = sources.component1_mesures;
 			ind = MesCol.length;
@@ -503,7 +873,7 @@ function constructor (id) {
 		
 		for (var i = 1; i < 6; i++) {
 			v = "component1_mes"+i;
-			if ($$(v).getValue() !== "Vide") {
+			if ($$(v).getValue() !== "0Vide") {
 				v = "component1_n"+i;
 				$$(v).setReadOnly(true);
 			}
@@ -605,7 +975,7 @@ function constructor (id) {
 			$$(v).setValue("");
 			$$(v).setReadOnly(false);
 			v = "component1_mes"+i;
-			$$(v).setValue("Vide");
+			$$(v).setValue("0Vide");
 			$$(v).setReadOnly(false);
 		}
 		
@@ -693,7 +1063,7 @@ function constructor (id) {
 			$$(v).setValue("");
 			$$(v).setReadOnly(true);
 			v = "component1_mes"+i;
-			$$(v).setValue("Vide");
+			$$(v).setValue("0Vide");
 			$$(v).setReadOnly(true);
 		}
 						
@@ -741,6 +1111,7 @@ function constructor (id) {
 
 	bSave.click = function bSave_click (event)// @startlock
 	{// @endlock
+		var v, vNb, vID, vEnCreation;
 		
 		sources.component1_pVProduction.Soufflet.set(sources.component1_soufflets);
 		sources.component1_pVProduction.save();
@@ -781,7 +1152,157 @@ function constructor (id) {
 		$$('component1_btUpd').hide();
 		$$('component1_btNew').show();
 		
-				
+		
+		for (var i = 1; i < 6; i++) {
+			v = "component1_mes"+i;
+			
+			if ($$(v).getValue() === "0A créer") {
+				$$(v).setValue("0Créé");
+				vEnCreation = 1;
+				sources.component1_mesures.addNewElement();
+				sources.component1_mesures.PV.set(sources.component1_pVProduction);
+				v = "component1_n"+i;
+				sources.component1_mesures.Num_Piece = $$(v).getValue();
+				v = "component1_Int"+i;
+				vNb = $$(v).getValue();
+				vNb = vNb.replace("NaN","0");
+		        vNb = parseFloat(vNb);
+				sources.component1_mesures.Int_Onde = vNb;
+				v = "component1_Ext"+i;
+				vNb = $$(v).getValue();
+				vNb = vNb.replace("NaN","0");
+		        vNb = parseFloat(vNb);
+				sources.component1_mesures.Ext_Onde = vNb;
+				v = "component1_Haut"+i;
+				vNb = $$(v).getValue();
+				vNb = vNb.replace("NaN","0");
+		        vNb = parseFloat(vNb);
+				sources.component1_mesures.Haut_Onde = vNb;
+				v = "component1_Nb"+i;
+				vNb = $$(v).getValue();
+				vNb = vNb.replace("NaN","0");
+		        vNb = parseInt(vNb,10);
+				sources.component1_mesures.Nb_Ondes = vNb;
+				v = "component1_L2"+i;
+				vNb = $$(v).getValue();
+				vNb = vNb.replace("NaN","0");
+		        vNb = parseInt(vNb,10);
+				sources.component1_mesures.L2 = vNb;
+				v = "component1_Dc1"+i;
+				vNb = $$(v).getValue();
+				vNb = vNb.replace("NaN","0");
+		        vNb = parseFloat(vNb);
+				sources.component1_mesures.Diam_Collet1 = vNb;
+				v = "component1_Lc1"+i;
+				vNb = $$(v).getValue();
+				vNb = vNb.replace("NaN","0");
+		        vNb = parseFloat(vNb);
+				sources.component1_mesures.Long_Collet1 = vNb;
+				v = "component1_Dc2"+i;
+				vNb = $$(v).getValue();
+				vNb = vNb.replace("NaN","0");
+		        vNb = parseFloat(vNb);
+				sources.component1_mesures.Diam_Collet2 = vNb;
+				v = "component1_Lc2"+i;
+				vNb = $$(v).getValue();
+				vNb = vNb.replace("NaN","0");
+		        vNb = parseFloat(vNb);
+				sources.component1_mesures.Long_Collet2 = vNb;
+				v = "component1_Raid"+i;
+				vNb = $$(v).getValue();
+				vNb = vNb.replace("NaN","0");
+		        vNb = parseFloat(vNb);
+				sources.component1_mesures.Raideur = vNb;
+				sources.component1_mesures.save();
+			}
+			vID = $$(v).getValue();
+			vID = parseInt(vID,10);
+			if (vID > 0) {
+				sources.component1_mesures.query("ID=:1", { onSuccess:function(event) {
+					    var v, iBox, vNb;
+					    iBox = event.userData.boxn;
+						v = "component1_n"+iBox;
+						sources.component1_mesures.Num_Piece = $$(v).getValue();
+						v = "component1_Int"+iBox;
+						vNb = $$(v).getValue();
+						vNb = vNb.replace("NaN","0");
+		        		vNb = parseFloat(vNb);
+						sources.component1_mesures.Int_Onde = vNb;
+						v = "component1_Ext"+iBox;
+						vNb = $$(v).getValue();
+						vNb = vNb.replace("NaN","0");
+		        		vNb = parseFloat(vNb);
+						sources.component1_mesures.Ext_Onde = vNb;
+						v = "component1_Haut"+iBox;
+						vNb = $$(v).getValue();
+						vNb = vNb.replace("NaN","0");
+		        		vNb = parseFloat(vNb);
+						sources.component1_mesures.Haut_Onde = vNb;
+						v = "component1_Nb"+iBox;
+						vNb = $$(v).getValue();
+						vNb = vNb.replace("NaN","0");
+		        		vNb = parseInt(vNb,10);
+						sources.component1_mesures.Nb_Ondes = vNb;
+						v = "component1_L2"+iBox;
+						vNb = $$(v).getValue();
+						vNb = vNb.replace("NaN","0");
+		        		vNb = parseInt(vNb,10);
+						sources.component1_mesures.L2 = vNb;
+						v = "component1_Dc1"+iBox;
+						vNb = $$(v).getValue();
+						vNb = vNb.replace("NaN","0");
+		        		vNb = parseFloat(vNb);
+						sources.component1_mesures.Diam_Collet1 = vNb;
+						v = "component1_Lc1"+iBox;
+						vNb = $$(v).getValue();
+						vNb = vNb.replace("NaN","0");
+		        		vNb = parseFloat(vNb);
+						sources.component1_mesures.Long_Collet1 = vNb;
+						v = "component1_Dc2"+iBox;
+						vNb = $$(v).getValue();
+						vNb = vNb.replace("NaN","0");
+		        		vNb = parseFloat(vNb);
+						sources.component1_mesures.Diam_Collet2 = vNb;
+						v = "component1_Lc2"+iBox;
+						vNb = $$(v).getValue();
+						vNb = vNb.replace("NaN","0");
+		        		vNb = parseFloat(vNb);
+						sources.component1_mesures.Long_Collet2 = vNb;
+						v = "component1_Raid"+iBox;
+						vNb = $$(v).getValue();
+						vNb = vNb.replace("NaN","0");
+		        		vNb = parseFloat(vNb);
+						sources.component1_mesures.Raideur = vNb;
+						sources.component1_mesures.save();
+					}, params:[vID], userData: {boxn:i}});
+
+			}
+			
+			v = "component1_n"+i;
+			$$(v).setReadOnly(true);
+			v = "component1_Int"+i;
+			$$(v).setReadOnly(true);
+			v = "component1_Ext"+i;
+			$$(v).setReadOnly(true);
+			v = "component1_Haut"+i;
+			$$(v).setReadOnly(true);
+			v = "component1_Nb"+i;
+			$$(v).setReadOnly(true);
+			v = "component1_L2"+i;
+			$$(v).setReadOnly(true);
+			v = "component1_Dc1"+i;
+			$$(v).setReadOnly(true);
+			v = "component1_Lc1"+i;
+			$$(v).setReadOnly(true);
+			v = "component1_Dc2"+i;
+			$$(v).setReadOnly(true);
+			v = "component1_Lc2"+i;
+			$$(v).setReadOnly(true);
+			v = "component1_Raid"+i;
+			$$(v).setReadOnly(true);
+			
+		}
+						
 	};// @lock
 
 	cNumLanc.change = function cNumLanc_change (event)// @startlock
@@ -818,6 +1339,41 @@ function constructor (id) {
 	};// @lock
 
 	// @region eventManager// @startlock
+	WAF.addListener(this.id + "_Raid5", "blur", Raid5.blur, "WAF");
+	WAF.addListener(this.id + "_Raid4", "blur", Raid4.blur, "WAF");
+	WAF.addListener(this.id + "_Raid3", "blur", Raid3.blur, "WAF");
+	WAF.addListener(this.id + "_Raid2", "blur", Raid2.blur, "WAF");
+	WAF.addListener(this.id + "_Raid1", "blur", Raid1.blur, "WAF");
+	WAF.addListener(this.id + "_Lc25", "blur", Lc25.blur, "WAF");
+	WAF.addListener(this.id + "_Lc24", "blur", Lc24.blur, "WAF");
+	WAF.addListener(this.id + "_Lc23", "blur", Lc23.blur, "WAF");
+	WAF.addListener(this.id + "_Lc22", "blur", Lc22.blur, "WAF");
+	WAF.addListener(this.id + "_Lc21", "blur", Lc21.blur, "WAF");
+	WAF.addListener(this.id + "_Dc25", "blur", Dc25.blur, "WAF");
+	WAF.addListener(this.id + "_Dc24", "blur", Dc24.blur, "WAF");
+	WAF.addListener(this.id + "_Dc23", "blur", Dc23.blur, "WAF");
+	WAF.addListener(this.id + "_Dc22", "blur", Dc22.blur, "WAF");
+	WAF.addListener(this.id + "_Dc21", "blur", Dc21.blur, "WAF");
+	WAF.addListener(this.id + "_Lc15", "blur", Lc15.blur, "WAF");
+	WAF.addListener(this.id + "_Lc14", "blur", Lc14.blur, "WAF");
+	WAF.addListener(this.id + "_Lc13", "blur", Lc13.blur, "WAF");
+	WAF.addListener(this.id + "_Lc12", "blur", Lc12.blur, "WAF");
+	WAF.addListener(this.id + "_Lc11", "blur", Lc11.blur, "WAF");
+	WAF.addListener(this.id + "_Dc15", "blur", Dc15.blur, "WAF");
+	WAF.addListener(this.id + "_Dc14", "blur", Dc14.blur, "WAF");
+	WAF.addListener(this.id + "_Dc13", "blur", Dc13.blur, "WAF");
+	WAF.addListener(this.id + "_Dc12", "blur", Dc12.blur, "WAF");
+	WAF.addListener(this.id + "_Dc11", "blur", Dc11.blur, "WAF");
+	WAF.addListener(this.id + "_L25", "blur", L25.blur, "WAF");
+	WAF.addListener(this.id + "_L24", "blur", L24.blur, "WAF");
+	WAF.addListener(this.id + "_L23", "blur", L23.blur, "WAF");
+	WAF.addListener(this.id + "_L22", "blur", L22.blur, "WAF");
+	WAF.addListener(this.id + "_L21", "blur", L21.blur, "WAF");
+	WAF.addListener(this.id + "_Nb5", "blur", Nb5.blur, "WAF");
+	WAF.addListener(this.id + "_Nb4", "blur", Nb4.blur, "WAF");
+	WAF.addListener(this.id + "_Nb3", "blur", Nb3.blur, "WAF");
+	WAF.addListener(this.id + "_Nb2", "blur", Nb2.blur, "WAF");
+	WAF.addListener(this.id + "_Nb1", "blur", Nb1.blur, "WAF");
 	WAF.addListener(this.id + "_Ext5", "blur", Ext5.blur, "WAF");
 	WAF.addListener(this.id + "_Int5", "blur", Int5.blur, "WAF");
 	WAF.addListener(this.id + "_n5", "blur", n5.blur, "WAF");
