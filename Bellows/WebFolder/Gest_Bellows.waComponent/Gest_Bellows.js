@@ -17,6 +17,8 @@ function constructor (id) {
 	$$("component1_ListBell").setRowHeight(22);
 
 	// @region namespaceDeclaration// @startlock
+	var BtCloPDF = {};	// @buttonImage
+	var BtPDF = {};	// @buttonImage
 	var cDiaCol1 = {};	// @textField
 	var cbCollet1 = {};	// @combobox
 	var btnMat = {};	// @buttonImage
@@ -34,6 +36,26 @@ function constructor (id) {
 	// @endregion// @endlock
 
 	// eventHandlers// @lock
+
+	BtCloPDF.click = function BtCloPDF_click (event)// @startlock
+	{// @endlock
+		$$('component1_BtCloPDF').hide();
+		$$('component1_BtPDF').show();
+		$$('component1_cUpld').hide();
+		$$('component1_fShow').hide();
+		$$('component1_bUpdate').show();
+		$$('component1_bNew').show();
+	};// @lock
+
+	BtPDF.click = function BtPDF_click (event)// @startlock
+	{// @endlock
+		$$('component1_BtCloPDF').show();
+		$$('component1_BtPDF').hide();
+		$$('component1_cUpld').hide();
+		$$('component1_fShow').show();
+		$$('component1_bUpdate').hide();
+		$$('component1_bNew').hide();
+	};// @lock
 
 	cDiaCol1.change = function cDiaCol1_change (event)// @startlock
 	{// @endlock
@@ -203,6 +225,11 @@ function constructor (id) {
 		$$('component1_cObs').setReadOnly(true);
 		$$('component1_cbActif').hide();
 		
+		$$('component1_BtCloPDF').hide();
+		$$('component1_BtPDF').show();
+		$$('component1_cUpld').hide();
+		$$('component1_fShow').hide();
+		
 		vTrsf = $$('component1_cbCollet1').getValue();
 		$$('component1_cCollet1').setValue(vTrsf);
 		vTrsf = $$('component1_cbCollet2').getValue();
@@ -276,6 +303,11 @@ function constructor (id) {
 		$$('component1_cObs').setReadOnly(false);
 		$$('component1_cbActif').show();
 		
+		$$('component1_BtCloPDF').hide();
+		$$('component1_BtPDF').hide();
+		$$('component1_cUpld').show();
+		$$('component1_fShow').hide();
+		
 		$$('component1_cDiamP').hide();
 		$$('component1_xDiamP').show();
 		$$('component1_cEpPlaque').hide();
@@ -317,6 +349,11 @@ function constructor (id) {
 		$$('component1_bUndo').show();
 		$$('component1_bNew').hide();
 		$$('component1_ListBell').disable();
+		
+		$$('component1_BtCloPDF').hide();
+		$$('component1_BtPDF').hide();
+		$$('component1_cUpld').hide();
+		$$('component1_fShow').hide();
 		
 		$$('component1_cRef').hide();
 		$$('component1_cRefC').show();
@@ -384,6 +421,8 @@ function constructor (id) {
 	};// @lock
 
 	// @region eventManager// @startlock
+	WAF.addListener(this.id + "_BtCloPDF", "click", BtCloPDF.click, "WAF");
+	WAF.addListener(this.id + "_BtPDF", "click", BtPDF.click, "WAF");
 	WAF.addListener(this.id + "_cDiaCol1", "change", cDiaCol1.change, "WAF");
 	WAF.addListener(this.id + "_cbCollet1", "change", cbCollet1.change, "WAF");
 	WAF.addListener(this.id + "_btnMat", "click", btnMat.click, "WAF");
